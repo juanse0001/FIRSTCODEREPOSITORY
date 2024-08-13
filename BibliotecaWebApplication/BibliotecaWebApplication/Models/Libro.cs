@@ -1,7 +1,10 @@
-﻿namespace BibliotecaWebApplication.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace BibliotecaWebApplication.Models
 {
     public class Libro
     {
+        [Key]
         public string LibroId { get; set; }
         public string ISBN { get; set; }
         public string Titulo { get; set; }
@@ -11,7 +14,7 @@
         {
             this.LibroId = Guid.NewGuid().ToString();
         }
+        //Propiedades de navegacion 
+         public ICollection<AutorLibro> LibroAutores { get; set; } = new List<AutorLibro>();
     }
-    public ICollection<AutorLibro> LibroAutores { get; set; } = new List<AutorLibro>();
-
 }

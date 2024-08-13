@@ -10,9 +10,19 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ApplicationDbContext>();
+//builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+//    .AddEntityFrameworkStores<ApplicationDbContext>();
+
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddDefaultTokenProviders();
+
+//Add controllers and views
+
 builder.Services.AddControllersWithViews();
+
+//Add razor Pages
+builder.Services.AddRazorPages(); // This line is crucial for your razor Pages to work properly
 
 var app = builder.Build();
 
@@ -33,11 +43,14 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication(); //Ensures the authentication services are used (This was missing).
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-app.MapRazorPages();
+
+
+app.MapRazorPages();//Ensure Razor Pages 
 
 app.Run();

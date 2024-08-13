@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BibliotecaWebApplication")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9d511d0b492d2ffb6080fdaeba2bcbd44a42ac42")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b85c7d1d6c1e5bf2260647ef066618629266032f")]
 [assembly: System.Reflection.AssemblyProductAttribute("BibliotecaWebApplication")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BibliotecaWebApplication")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

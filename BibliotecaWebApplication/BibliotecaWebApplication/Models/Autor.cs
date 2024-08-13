@@ -12,7 +12,7 @@ namespace BibliotecaWebApplication.Models
         {
             this.AutorId = Guid.NewGuid();
         }
+        //Propiedades de navegacion
+        public ICollection<AutorLibro> AutorLibros { get; set; } = new List<AutorLibro>();
     }
-    //Propiedades de navegacion
-    public ICollection<AutorLibro> AutorLibros { get; set; } = new List<AutorLibro>();
 }
