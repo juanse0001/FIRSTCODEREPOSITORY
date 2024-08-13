@@ -12,4 +12,6 @@
             this.LibroId = Guid.NewGuid().ToString();
         }
     }
+    public ICollection<AutorLibro> LibroAutores { get; set; } = new List<AutorLibro>();
+
 }
