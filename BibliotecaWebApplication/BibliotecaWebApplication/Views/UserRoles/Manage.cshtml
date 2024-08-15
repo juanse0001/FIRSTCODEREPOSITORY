@@ -1,21 +1,19 @@
 ﻿@model IEnumerable<BibliotecaWebApplication.Models.ViewModels.ManageUserRolesViewModel>
 
 <h2>Manage Roles for User</h2>
-@{
-    var listModel = Model.ToList();
-}
-<form asp.asp-controller="UserRoles" asp-action="Manage" method="post">
-    <input type="hidden" name="userId" value="@ViewBag.userId" />
-    for (int i = 0; i < listModel.Count; i++)
-    {
 
-        var role listModel[i];
+<form asp-controller="UserRoles" asp-action="Manage" method="post">
+    <input type="hidden" name="userId" value="@ViewBag.UserId" />
+
+    @for (int i = 0; i < Model.Count(); i++)
+    {
+        var role = Model.ElementAt(i);
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="model[i].IsSelected" value="true" asp-for="@role. IsSelected" />
-            <input type="hidden" name="model [@i].RoleId" value="@role.RoleId" />
-            <input type="hidden" name="model [pi].RoleName" value="@role. RoleName" />
+            <input class="form-check-input" type="checkbox" name="roles[@i].IsSelected" value="true" @(role.IsSelected ? "checked" : "") />
+            <input type="hidden" name="roles[@i].RoleId" value="@role.RoleId" />
+            <input type="hidden" name="roles[@i].RoleName" value="@role.RoleName" />
             <label class="form-check-label">@role.RoleName</label>
         </div>
     }
-    <button type="submit" class="btn btn-success">Update Roles</button>
+<button type="submit" class="btn btn-success">Update Roles</button>
 </form>

@@ -1,5 +1,8 @@
 using BibliotecaWebApplication.Data;
+using BibliotecaWebApplication.Models.Services;
+using BibliotecaWebApplicationMvc.Services;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,6 +26,9 @@ builder.Services.AddControllersWithViews();
 
 //Add razor Pages
 builder.Services.AddRazorPages(); // This line is crucial for your razor Pages to work properly
+
+builder.Services.AddTransient<IEmailSender, EmailSender>();
+builder.Services.Configure<AuthMessageSenderOptions>(builder.Configuration);
 
 var app = builder.Build();
 
