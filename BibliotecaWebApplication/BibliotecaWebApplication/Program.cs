@@ -26,6 +26,22 @@ builder.Services.AddRazorPages(); // This line is crucial for your razor Pages t
 
 var app = builder.Build();
 
+// Ensure roles and user are created before running the application
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    try
+    {
+        await IdentityDataInitializer.SeedData(services);
+    }
+    catch (Exception ex)
+    {
+        var logger = services.GetRequiredService<ILogger<Program>>();
+        logger.LogError(ex, "An error occurred seeding the DB.");
+    }
+}
+
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

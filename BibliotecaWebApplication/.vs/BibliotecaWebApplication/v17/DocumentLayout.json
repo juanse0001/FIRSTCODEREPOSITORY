@@ -1,21 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\FIRSTCODEREPOSITORYGit\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\",
+  "WorkspaceRootPath": "C:\\Users\\Sebastian\\Repositorios\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|c:\\firstcoderepositorygit\\firstcoderepository\\bibliotecawebapplication\\bibliotecawebapplication\\controllers\\userrolescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|solutionrelative:bibliotecawebapplication\\controllers\\userrolescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|c:\\firstcoderepositorygit\\firstcoderepository\\bibliotecawebapplication\\bibliotecawebapplication\\models\\viewmodels\\userrolesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|solutionrelative:bibliotecawebapplication\\models\\viewmodels\\userrolesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|c:\\firstcoderepositorygit\\firstcoderepository\\bibliotecawebapplication\\bibliotecawebapplication\\models\\viewmodels\\manageuserrolesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|solutionrelative:bibliotecawebapplication\\models\\viewmodels\\manageuserrolesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|c:\\firstcoderepositorygit\\firstcoderepository\\bibliotecawebapplication\\bibliotecawebapplication\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|c:\\users\\sebastian\\repositorios\\firstcoderepository\\bibliotecawebapplication\\bibliotecawebapplication\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|solutionrelative:bibliotecawebapplication\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
@@ -26,62 +14,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\FIRSTCODEREPOSITORYGit\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "BibliotecaWebApplication\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\FIRSTCODEREPOSITORYGit\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "BibliotecaWebApplication\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-14T22:24:19.252Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UserRolesController.cs",
-              "DocumentMoniker": "C:\\FIRSTCODEREPOSITORYGit\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\Controllers\\UserRolesController.cs",
-              "RelativeDocumentMoniker": "BibliotecaWebApplication\\Controllers\\UserRolesController.cs",
-              "ToolTip": "C:\\FIRSTCODEREPOSITORYGit\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\Controllers\\UserRolesController.cs",
-              "RelativeToolTip": "BibliotecaWebApplication\\Controllers\\UserRolesController.cs",
-              "ViewState": "AQIAAEQAAAAAAAAAAAAkwHMAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-14T22:07:26.846Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UserRolesViewModel.cs",
-              "DocumentMoniker": "C:\\FIRSTCODEREPOSITORYGit\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\Models\\ViewModels\\UserRolesViewModel.cs",
-              "RelativeDocumentMoniker": "BibliotecaWebApplication\\Models\\ViewModels\\UserRolesViewModel.cs",
-              "ToolTip": "C:\\FIRSTCODEREPOSITORYGit\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\Models\\ViewModels\\UserRolesViewModel.cs",
-              "RelativeToolTip": "BibliotecaWebApplication\\Models\\ViewModels\\UserRolesViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-14T22:08:50.272Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ManageUserRolesViewModel.cs",
-              "DocumentMoniker": "C:\\FIRSTCODEREPOSITORYGit\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\Models\\ViewModels\\ManageUserRolesViewModel.cs",
-              "RelativeDocumentMoniker": "BibliotecaWebApplication\\Models\\ViewModels\\ManageUserRolesViewModel.cs",
-              "ToolTip": "C:\\FIRSTCODEREPOSITORYGit\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\Models\\ViewModels\\ManageUserRolesViewModel.cs",
-              "RelativeToolTip": "BibliotecaWebApplication\\Models\\ViewModels\\ManageUserRolesViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-14T22:10:13.297Z",
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\Repositorios\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "BibliotecaWebApplication\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Sebastian\\Repositorios\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "BibliotecaWebApplication\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAoAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-15T17:19:36.808Z",
               "EditorCaption": ""
             }
           ]
