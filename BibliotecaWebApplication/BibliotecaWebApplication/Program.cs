@@ -1,4 +1,5 @@
 using BibliotecaWebApplication.Data;
+using BibliotecaWebApplication.Models.Seeds;
 using BibliotecaWebApplication.Models.Services;
 using BibliotecaWebApplicationMvc.Services;
 using Microsoft.AspNetCore.Identity;
@@ -39,6 +40,10 @@ using (var scope = app.Services.CreateScope())
     try
     {
         await IdentityDataInitializer.SeedData(services);
+        var context = services.GetRequiredService<ApplicationDbContext>();
+
+        // Llamar al método SeedAsync
+        await AutorLibroDataInitializer.SeedAsync(context);
     }
     catch (Exception ex)
     {
@@ -46,6 +51,7 @@ using (var scope = app.Services.CreateScope())
         logger.LogError(ex, "An error occurred seeding the DB.");
     }
 }
+
 
 
 // Configure the HTTP request pipeline.

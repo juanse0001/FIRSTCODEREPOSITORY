@@ -1,0 +1,62 @@
+﻿@model BibliotecaWebApplication.Models.Libro
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Libro</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ISBN)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ISBN)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NumeroPaginas)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NumeroPaginas)
+        </dd>
+    </dl>
+</div>
+<div>
+    <h4>Autor(es):</h4>
+    @if (Model.LibroAutores.Any())
+    {
+        <ul class="list-group list-group-flush">
+            @foreach (var autorLibro in Model.LibroAutores)
+            {
+                <li class="list-group-item d-flex align-items-center">
+                    <i class="fas fa-user fa-2x text-primary me-2" title="Autor"></i>
+                    <span class="fw-semibold">
+                        @autorLibro.Autor.Nombres @autorLibro.Autor.Apellidos
+                    </span>
+                </li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p>Este libro no tiene autores asociados.</p>
+    }
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.LibroId" class="btn btn-sm btn-warning me-2">
+        <i class="bi bi-pencil-square"></i> Edit
+    </a>
+    <a asp-action="Index" class="btn btn-sm btn-secondary">
+        <i class="bi bi-arrow-left"></i> Back to List
+    </a>
+</div>

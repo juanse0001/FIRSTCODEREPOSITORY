@@ -5,16 +5,16 @@ namespace BibliotecaWebApplication.Models
     public class Libro
     {
         [Key]
-        public string LibroId { get; set; }
+        public Guid LibroId { get; set; }
         public string ISBN { get; set; }
         public string Titulo { get; set; }
         public int NumeroPaginas { get; set; }
 
         public Libro() 
         {
-            this.LibroId = Guid.NewGuid().ToString();
+            this.LibroId = Guid.NewGuid();
         }
         //Propiedades de navegacion 
-         public ICollection<AutorLibro> LibroAutores { get; set; } = new List<AutorLibro>();
+        public ICollection<AutorLibro> LibroAutores { get; set; } = new List<AutorLibro>();
     }
 }

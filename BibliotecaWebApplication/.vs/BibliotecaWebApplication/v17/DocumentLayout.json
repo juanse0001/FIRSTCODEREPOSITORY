@@ -1,33 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\FIRSTCODEREPOSITORYGit\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\",
+  "WorkspaceRootPath": "C:\\Users\\Sebastian\\Repositorios\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|c:\\firstcoderepositorygit\\firstcoderepository\\bibliotecawebapplication\\bibliotecawebapplication\\models\\services\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|solutionrelative:bibliotecawebapplication\\models\\services\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|c:\\firstcoderepositorygit\\firstcoderepository\\bibliotecawebapplication\\bibliotecawebapplication\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|solutionrelative:bibliotecawebapplication\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Aprendiz\\AppData\\Roaming\\Microsoft\\UserSecrets\\aspnet-BibliotecaWebApplication-959bab18-9085-4fef-b60d-4ef530c1e513\\secrets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|c:\\firstcoderepositorygit\\firstcoderepository\\bibliotecawebapplication\\bibliotecawebapplication\\models\\services\\authmessagesenderoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|solutionrelative:bibliotecawebapplication\\models\\services\\authmessagesenderoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|c:\\firstcoderepositorygit\\firstcoderepository\\bibliotecawebapplication\\bibliotecawebapplication\\controllers\\rolescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|solutionrelative:bibliotecawebapplication\\controllers\\rolescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|c:\\firstcoderepositorygit\\firstcoderepository\\bibliotecawebapplication\\bibliotecawebapplication\\views\\userroles\\manage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|solutionrelative:bibliotecawebapplication\\views\\userroles\\manage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|c:\\firstcoderepositorygit\\firstcoderepository\\bibliotecawebapplication\\bibliotecawebapplication\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|solutionrelative:bibliotecawebapplication\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|c:\\users\\sebastian\\repositorios\\firstcoderepository\\bibliotecawebapplication\\bibliotecawebapplication\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|solutionrelative:bibliotecawebapplication\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -36,102 +13,20 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "DockedWidth": 252,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\FIRSTCODEREPOSITORYGit\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\Program.cs",
-              "RelativeDocumentMoniker": "BibliotecaWebApplication\\Program.cs",
-              "ToolTip": "C:\\FIRSTCODEREPOSITORYGit\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\Program.cs",
-              "RelativeToolTip": "BibliotecaWebApplication\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-15T22:24:47.407Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "EmailSender.cs",
-              "DocumentMoniker": "C:\\FIRSTCODEREPOSITORYGit\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\Models\\Services\\EmailSender.cs",
-              "RelativeDocumentMoniker": "BibliotecaWebApplication\\Models\\Services\\EmailSender.cs",
-              "ToolTip": "C:\\FIRSTCODEREPOSITORYGit\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\Models\\Services\\EmailSender.cs",
-              "RelativeToolTip": "BibliotecaWebApplication\\Models\\Services\\EmailSender.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAUAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-15T22:19:19.937Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "secrets.json",
-              "DocumentMoniker": "C:\\Users\\Aprendiz\\AppData\\Roaming\\Microsoft\\UserSecrets\\aspnet-BibliotecaWebApplication-959bab18-9085-4fef-b60d-4ef530c1e513\\secrets.json",
-              "RelativeDocumentMoniker": "..\\..\\..\\Users\\Aprendiz\\AppData\\Roaming\\Microsoft\\UserSecrets\\aspnet-BibliotecaWebApplication-959bab18-9085-4fef-b60d-4ef530c1e513\\secrets.json",
-              "ToolTip": "C:\\Users\\Aprendiz\\AppData\\Roaming\\Microsoft\\UserSecrets\\aspnet-BibliotecaWebApplication-959bab18-9085-4fef-b60d-4ef530c1e513\\secrets.json",
-              "RelativeToolTip": "..\\..\\..\\Users\\Aprendiz\\AppData\\Roaming\\Microsoft\\UserSecrets\\aspnet-BibliotecaWebApplication-959bab18-9085-4fef-b60d-4ef530c1e513\\secrets.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\Repositorios\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\appsettings.json",
+              "RelativeDocumentMoniker": "BibliotecaWebApplication\\appsettings.json",
+              "ToolTip": "C:\\Users\\Sebastian\\Repositorios\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\appsettings.json",
+              "RelativeToolTip": "BibliotecaWebApplication\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAMAQAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-08-15T22:14:03.733Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AuthMessageSenderOptions.cs",
-              "DocumentMoniker": "C:\\FIRSTCODEREPOSITORYGit\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\Models\\Services\\AuthMessageSenderOptions.cs",
-              "RelativeDocumentMoniker": "BibliotecaWebApplication\\Models\\Services\\AuthMessageSenderOptions.cs",
-              "ToolTip": "C:\\FIRSTCODEREPOSITORYGit\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\Models\\Services\\AuthMessageSenderOptions.cs",
-              "RelativeToolTip": "BibliotecaWebApplication\\Models\\Services\\AuthMessageSenderOptions.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-15T21:55:20.059Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Manage.cshtml",
-              "DocumentMoniker": "C:\\FIRSTCODEREPOSITORYGit\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\Views\\UserRoles\\Manage.cshtml",
-              "RelativeDocumentMoniker": "BibliotecaWebApplication\\Views\\UserRoles\\Manage.cshtml",
-              "ToolTip": "C:\\FIRSTCODEREPOSITORYGit\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\Views\\UserRoles\\Manage.cshtml",
-              "RelativeToolTip": "BibliotecaWebApplication\\Views\\UserRoles\\Manage.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-15T19:39:46.848Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "RolesController.cs",
-              "DocumentMoniker": "C:\\FIRSTCODEREPOSITORYGit\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\Controllers\\RolesController.cs",
-              "RelativeDocumentMoniker": "BibliotecaWebApplication\\Controllers\\RolesController.cs",
-              "ToolTip": "C:\\FIRSTCODEREPOSITORYGit\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\Controllers\\RolesController.cs",
-              "RelativeToolTip": "BibliotecaWebApplication\\Controllers\\RolesController.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAAA3wDMAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-15T19:28:55.705Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\FIRSTCODEREPOSITORYGit\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "BibliotecaWebApplication\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\FIRSTCODEREPOSITORYGit\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "BibliotecaWebApplication\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-15T17:19:36.808Z",
+              "WhenOpened": "2024-08-16T04:30:09.312Z",
               "EditorCaption": ""
             }
           ]

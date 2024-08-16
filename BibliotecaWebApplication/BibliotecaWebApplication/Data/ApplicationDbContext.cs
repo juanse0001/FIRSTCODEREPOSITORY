@@ -13,6 +13,8 @@ namespace BibliotecaWebApplication.Data
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.Entity<IdentityUserLogin<string>>()
                 .HasKey(ul => new { ul.UserId, ul.LoginProvider, ul.ProviderKey });
 
@@ -28,5 +30,6 @@ namespace BibliotecaWebApplication.Data
 
         public DbSet<Autor> Autores { get ; set;}
         public DbSet<Libro> Libros { get; set; }
+        public DbSet<AutorLibro> AutorLibros { get; set; }
     }
 }
