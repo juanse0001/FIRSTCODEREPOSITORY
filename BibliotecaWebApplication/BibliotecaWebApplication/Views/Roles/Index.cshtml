@@ -15,6 +15,10 @@
             <tr>
                 <td>@role.Name</td>
                 <td>
+
+                     <a asp-action="Create" asp-route-id="@role.Id" class="btn btn-primary">
+                        <i class="bi bi-pencil-square"></i> Create
+
                     <a asp-action="Edit" asp-route-id="@role.Id" class="btn btn-primary">
                         <i class="bi bi-pencil-square"></i> Edit
                     </a>
