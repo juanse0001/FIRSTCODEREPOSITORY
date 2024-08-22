@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BibliotecaWebApplication.Controllers
 {
-    [Authorize(Roles = "Root, Administrador")]
+    [Authorize(Roles = "Root")]
     public class RolesController : Controller
     {
         private readonly RoleManager<IdentityRole> _roleManager;

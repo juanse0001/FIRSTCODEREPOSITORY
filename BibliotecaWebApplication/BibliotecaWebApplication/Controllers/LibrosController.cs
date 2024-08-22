@@ -10,11 +10,11 @@ using Microsoft.AspNetCore.Authorization;
 namespace BibliotecaWebApplication.Controllers
 {
     [Authorize(Roles = "Bibliotecario, Administrador")]
-    public class LibroController : Controller
+    public class LibrosController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public LibroController(ApplicationDbContext context)
+        public LibrosController(ApplicationDbContext context)
         {
             _context = context;
         }

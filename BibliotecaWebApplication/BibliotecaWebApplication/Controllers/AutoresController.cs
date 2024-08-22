@@ -94,6 +94,7 @@ namespace BibliotecaWebApplication.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> Edit(Guid id, [Bind("AutorId,Apellidos,Nombres,Nacionalidad")] Autor autor)
         {
             if (id != autor.AutorId)

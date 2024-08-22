@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 
-[Authorize(Roles = "Bibliotecario, Administrador")]
 public class AutorLibrosController : Controller
 {
     private readonly ApplicationDbContext _context;
@@ -16,6 +15,7 @@ public class AutorLibrosController : Controller
     }
 
     // GET: AutorLibros
+    [Authorize(Roles = "Bibliotecario, Administrador")]
     public async Task<IActionResult> Index()
     {
         var autorLibros = await _context.AutorLibros
@@ -26,6 +26,7 @@ public class AutorLibrosController : Controller
     }
 
     // GET: AutorLibros/Details/5
+    [Authorize(Roles = "Bibliotecario, Administrador")]
     public async Task<IActionResult> Details(Guid? autorId, Guid? libroId)
     {
         if (autorId == null || libroId == null)
@@ -46,6 +47,7 @@ public class AutorLibrosController : Controller
     }
 
     // GET: AutorLibros/Create
+    [Authorize(Roles = "Administrador")]
     public IActionResult Create()
     {
         ViewData["AutorId"] = new SelectList(_context.Autores, "AutorId", "NombreCompleto");
@@ -56,6 +58,7 @@ public class AutorLibrosController : Controller
     // POST: AutorLibros/Create
     [HttpPost]
     [ValidateAntiForgeryToken]
+    [Authorize(Roles = "Administrador")]
     public async Task<IActionResult> Create([Bind("AutorId,LibroId")] AutorLibro autorLibro)
     {
         if (ModelState.IsValid)
@@ -82,6 +85,7 @@ public class AutorLibrosController : Controller
     }
 
     // GET: AutorLibros/Edit/5
+    [Authorize(Roles = "Administrador")]
     public async Task<IActionResult> Edit(Guid? autorId, Guid? libroId)
     {
         if (autorId == null || libroId == null)
@@ -103,6 +107,7 @@ public class AutorLibrosController : Controller
     // POST: AutorLibros/Edit/5
     [HttpPost]
     [ValidateAntiForgeryToken]
+    [Authorize(Roles = "Administrador")]
     public async Task<IActionResult> Edit(Guid autorId, Guid libroId, [Bind("AutorId,LibroId")] AutorLibro autorLibro)
     {
         if (autorId != autorLibro.AutorId || libroId != autorLibro.LibroId)
@@ -136,6 +141,7 @@ public class AutorLibrosController : Controller
     }
 
     // GET: AutorLibros/Delete/5
+    [Authorize(Roles = "Administrador")]
     public async Task<IActionResult> Delete(Guid? autorId, Guid? libroId)
     {
         if (autorId == null || libroId == null)
@@ -158,6 +164,7 @@ public class AutorLibrosController : Controller
     // POST: AutorLibros/Delete/5
     [HttpPost, ActionName("Delete")]
     [ValidateAntiForgeryToken]
+    [Authorize(Roles = "Administrador")]
     public async Task<IActionResult> DeleteConfirmed(Guid autorId, Guid libroId)
     {
         var autorLibro = await _context.AutorLibros

@@ -8,7 +8,7 @@ using System.Data;
 
 namespace BibliotecaWebApplication.Controllers
 {
-    [Authorize(Roles = "Root, Administrador")]
+    [Authorize(Roles = "Root")]
     public class UserRolesController : Controller
     {
         private readonly UserManager<IdentityUser> _userManager;
