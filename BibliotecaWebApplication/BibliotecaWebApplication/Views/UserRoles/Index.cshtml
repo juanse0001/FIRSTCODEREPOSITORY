@@ -1,13 +1,12 @@
 ﻿@model IEnumerable<BibliotecaWebApplication.Models.ViewModels.UserRolesViewModel>
+
 <h2>Manage User Roles</h2>
-@{
-    var listModel = Model.ToList();
-}
-<table class="table">
+
+<table class="table table-striped table-hover">
     <thead>
         <tr>
-            <th>Email</th>
-            <th>Roles</th>
+            <th class="text-left">Email</th>
+            <th class="text-left">Roles</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -15,13 +14,25 @@
         @foreach (var user in Model)
         {
             <tr>
-                <td>@user.Email</td>
-                <td>@string.Join(", ", user. Roles)</td>
+                <td class="text-left">@user.Email</td>
+                <td class="text-left">
+                    @if (user.Roles.Any())
+                    {
+                        @foreach (var role in user.Roles)
+                        {
+                            @role
+                            <br />
+                        }
+                    }
+                    else
+                    {
+                        @: No Roles Assigned
+                    }
+                </td>
                 <td>
-                    <a asp-action="Manage" asp-route-userId="@user.UserId" class="btn btn-info">Manage Roles</a>
+                    <a asp-action="Manage" asp-route-userId="@user.UserId" class="btn btn-info me-2">Manage Roles</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
-

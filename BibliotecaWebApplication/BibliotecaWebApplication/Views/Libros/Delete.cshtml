@@ -1,0 +1,43 @@
+﻿@model BibliotecaWebApplication.Models.Libro
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h1>Borrar Libro</h1>
+                </div>
+                <div class="card-body">
+                    <h3 class="text-center mb-4">¿Estás seguro de que deseas borrar este libro?</h3>
+                    <dl class="row">
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.ISBN)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.ISBN)
+                        </dd>
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.Titulo)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.Titulo)
+                        </dd>
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.NumeroPaginas)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.NumeroPaginas)
+                        </dd>
+                    </dl>
+                    <div class="d-flex justify-content-between">
+                        <form asp-action="Delete">
+                            <input type="hidden" asp-for="LibroId" />
+                            <button type="submit" class="btn btn-danger">Borrar</button>
+                        </form>
+                        <a asp-action="Index" class="btn btn-secondary">Volver a la Lista</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

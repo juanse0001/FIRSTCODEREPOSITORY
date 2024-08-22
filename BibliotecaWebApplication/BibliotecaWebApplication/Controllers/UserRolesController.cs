@@ -25,14 +25,18 @@ namespace BibliotecaWebApplication.Controllers
         {
             var users = _userManager.Users.ToList();
             var userRolesViewModel = new List<UserRolesViewModel>();
+
             foreach (var user in users)
             {
-                var thisViewModel = new UserRolesViewModel();
-                thisViewModel.UserId = user.Id;
-                thisViewModel.Email = user.Email;
-                thisViewModel.Roles = await GetUserRoles(user);
+                var thisViewModel = new UserRolesViewModel
+                {
+                    UserId = user.Id,
+                    Email = user.Email,
+                    Roles = await GetUserRoles(user)
+                };
                 userRolesViewModel.Add(thisViewModel);
             }
+
             return View(userRolesViewModel);
         }
         private async Task<List<string>> GetUserRoles(IdentityUser user)
@@ -46,11 +50,13 @@ namespace BibliotecaWebApplication.Controllers
         {
             ViewBag.UserId = userId;
             var user = await _userManager.FindByIdAsync(userId);
+
             if (user == null)
             {
                 ViewBag.ErrorMessage = $"User with Id = {userId} cannot be found";
-                return View("Not Found");
+                return View("NotFound");
             }
+
             ViewBag.UserName = user.UserName;
 
             var model = new List<ManageUserRolesViewModel>();
@@ -60,59 +66,49 @@ namespace BibliotecaWebApplication.Controllers
                 var userRolesViewModel = new ManageUserRolesViewModel
                 {
                     RoleId = role.Id,
-                    RoleName = role.Name
+                    RoleName = role.Name,
+                    IsSelected = await _userManager.IsInRoleAsync(user, role.Name)
                 };
-                if (await _userManager.IsInRoleAsync(user, role.Name))
-                {
-                    userRolesViewModel.IsSelected = true;
-                }
-                else
-                {
-                    userRolesViewModel.IsSelected = false;
-                }
                 model.Add(userRolesViewModel);
             }
+
             return View(model);
         }
+
+
         //POST: UserRolesController/Manage
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Manage(List<ManageUserRolesViewModel> model, string userId)
+        public async Task<IActionResult> Manage(List<ManageUserRolesViewModel> roles, string userId)
         {
-            //Encuentra al usuario basado en el userId proporcionado
             var user = await _userManager.FindByIdAsync(userId);
+
             if (user == null)
             {
-                return View("Not Found");
+                return View("NotFound");
             }
 
-            //Obten los roles acutales asociados al usuario
             var currentRoles = await _userManager.GetRolesAsync(user);
 
-            //Filtro para obtener los roles actaules asociados al usuario
-            var rolesToAdd = model.Where(x => x.IsSelected && !currentRoles.Contains(x.RoleName)).Select(x => x.RoleName);
+            var rolesToAdd = roles.Where(x => x.IsSelected && !currentRoles.Contains(x.RoleName)).Select(x => x.RoleName);
+            var rolesToRemove = currentRoles.Where(role => roles.Any(x => x.RoleName == role && !x.IsSelected));
 
-            //Filtro para obtener los roles que necesitan ser removidos
-            var rolesToRemove = currentRoles.Where(role => !model.Any(x => x.RoleName == role && x.IsSelected));
-
-            //Resultado de remover los roles no deseados
             var removeResult = await _userManager.RemoveFromRolesAsync(user, rolesToRemove);
             if (!removeResult.Succeeded)
             {
-                ModelState.AddModelError("", "Cannot remove user existing roles");
-                return View(model);
+                ModelState.AddModelError("", "Cannot remove user existing roles: " + string.Join(", ", removeResult.Errors.Select(e => e.Description)));
+                return View(roles);
             }
 
-            //Resultado de agregar los nuevos roles seleccionados
             var addResult = await _userManager.AddToRolesAsync(user, rolesToAdd);
             if (!addResult.Succeeded)
             {
-                ModelState.AddModelError("", "Cannot add selected roles to user");
-                return View(model);
+                ModelState.AddModelError("", "Cannot add selected roles to user: " + string.Join(", ", addResult.Errors.Select(e => e.Description)));
+                return View(roles);
             }
 
-            //Redirige al indice si todo es exitoso
             return RedirectToAction("Index");
         }
+
     }
 }

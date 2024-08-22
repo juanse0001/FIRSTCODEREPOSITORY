@@ -37,19 +37,17 @@ namespace BibliotecaWebApplication.Controllers
         {
             if (ModelState.IsValid)
             {
-                IdentityRole role = new IdentityRole { Name = model.Name };
+                var role = new IdentityRole { Name = model.Name };
                 IdentityResult result = await _roleManager.CreateAsync(role);
                 if (result.Succeeded)
                 {
                     return RedirectToAction("Index");
                 }
-                foreach (var error in result.Errors)
-                {
-                    ModelState.AddModelError("", error.Description);
-                }
+                ModelState.AddModelError("", string.Join(",", result.Errors.Select(e => e.Description))); // Combine error messages
             }
             return View(model);
         }
+
         // GET: RolesController/Edit/5
         public async Task<IActionResult> Edit(string id)
         {
@@ -61,6 +59,7 @@ namespace BibliotecaWebApplication.Controllers
             RoleViewModel model = new RoleViewModel { Id = role.Id, Name = role.Name };
             return View(model);
         }
+
         // POST: RolesController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -73,21 +72,18 @@ namespace BibliotecaWebApplication.Controllers
                 {
                     return NotFound();
                 }
-
                 role.Name = model.Name;
-                var result = await _roleManager.UpdateAsync(role);
+                var result = await _roleManager.UpdateAsync(role); // Update the role
                 if (result.Succeeded)
                 {
                     return RedirectToAction("Index");
                 }
-
-                foreach (var error in result.Errors)
-                {
-                    ModelState.AddModelError("", error.Description);
-                }
+                ModelState.AddModelError("", string.Join(",", result.Errors.Select(e => e.Description))); // Combine error messages
             }
             return View(model);
         }
+
+
         // POST: RolesController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -102,10 +98,7 @@ namespace BibliotecaWebApplication.Controllers
                 {
                     return RedirectToAction("Index");
                 }
-                foreach (var error in result.Errors)
-                {
-                    ModelState.AddModelError("", error.Description);
-                }
+                ModelState.AddModelError("", string.Join(",", result.Errors.Select(e => e.Description))); // Combine error messages
             }
             return View("Index");
         }
