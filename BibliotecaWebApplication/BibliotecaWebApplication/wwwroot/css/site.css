@@ -1,54 +1,18 @@
 /* Estilos generales */
 body {
     font-family: 'Comic Sans MS', cursive; /* O una fuente similar a las caricaturas */
-    background: linear-gradient(to bottom, #002366, #0b4fa1); /* Degradado de azul oscuro */
-    color: #fff; /* Texto blanco para mejor contraste */
+    background: linear-gradient(to bottom, #D2B48C, #F5DEB3); /* Degradado de cafÃ© claro */
+    color: #000; /* Texto negro para mejor contraste sobre el fondo claro */
 }
 
-/* Estilos para las barras de navegación */
+
+/* Estilos para las barras de navegaciï¿½n */
 nav {
-    background-color: #00468b; /* Azul más oscuro para las barras */
+    background-color: #00468b; /* Azul mï¿½s oscuro para las barras */
     color: #fff;
 }
 
-/* Estilos adicionales (opcional) */
-h1, h2, h3 {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para el texto */
-}
-
-/* Estilos para elementos específicos (ajusta según tu HTML) */
-.croods-character {
-    border: 2px solid #fff;
-    border-radius: 10px;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo ligeramente transparente */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-/* Estilos para los botones */
-.table a {
-    text-decoration: none; /* Quitar subrayado */
-    padding: 5px 10px; /* Añadir espacio alrededor del texto */
-    border-radius: 3px; /* Bordes redondeados */
-    color: #fff; /* Color blanco para contraste */
-}
-
-    .table a.btn-edit {
-        background-color: #007bff;
-    }
-
-    .table a.btn-details {
-        background-color: #17a2b8;
-    }
-
-    .table a.btn-delete {
-        background-color: #dc3545;
-    }
-
-    .table a:hover {
-        opacity: 0.8; /* Efecto de opacidad al pasar el cursor */
-    }
-
-/* Estilos para el botón "Create New" */
+/* Estilos para el botï¿½n "Create New" */
 a.create-new-button {
     background-color: #007bff; /* Azul claro, similar al de Bootstrap */
     color: #fff; /* Texto blanco */
@@ -58,14 +22,6 @@ a.create-new-button {
     font-weight: bold;
 }
 
-/* Estilos para todos los botones (opcional) */
-.table a {
-    color: #fff; /* Texto blanco para todos los botones */
-    /* Otros estilos comunes a todos los botones, si los hay */
-}
-
-
-/* Puedes agregar más clases y estilos para personalizar aún más tu sitio */
 /*
 html {
   font-size: 14px;

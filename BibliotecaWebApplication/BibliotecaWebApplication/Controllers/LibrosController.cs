@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using BibliotecaWebApplication.Models;
 using Microsoft.AspNetCore.Authorization;
 
 namespace BibliotecaWebApplication.Controllers
@@ -36,7 +35,6 @@ namespace BibliotecaWebApplication.Controllers
                 .Include(l => l.LibroAutores)
                 .ThenInclude(a => a.Autor)
                 .FirstOrDefaultAsync(m => m.LibroId == id);
-
 
             if (libro == null)
             {
@@ -104,7 +102,6 @@ namespace BibliotecaWebApplication.Controllers
             return View(libro);
         }
 
-
         // POST: Libro/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -149,6 +146,49 @@ namespace BibliotecaWebApplication.Controllers
             }
             ViewBag.AutoresSelectList = new SelectList(_context.Autores, "AutorId", "Nombre", autorIds);
             return View(libro);
+        }
+
+        // GET: Libro/Delete/5
+        public async Task<IActionResult> Delete(Guid? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var libro = await _context.Libros
+                .Include(l => l.LibroAutores)
+                .ThenInclude(a => a.Autor)
+                .FirstOrDefaultAsync(m => m.LibroId == id);
+
+            if (libro == null)
+            {
+                return NotFound();
+            }
+
+            return View(libro);
+        }
+
+        // POST: Libro/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(Guid id)
+        {
+            var libro = await _context.Libros.FindAsync(id);
+
+            if (libro == null)
+            {
+                return NotFound();
+            }
+
+            // Eliminar autores asociados
+            var autoresLibros = _context.AutorLibros.Where(al => al.LibroId == id).ToList();
+            _context.AutorLibros.RemoveRange(autoresLibros);
+
+            // Eliminar el libro
+            _context.Libros.Remove(libro);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
     }
 }
