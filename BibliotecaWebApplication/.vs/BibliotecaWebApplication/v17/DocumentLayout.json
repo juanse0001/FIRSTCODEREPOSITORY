@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Prpyecto para Biblioteca\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|c:\\users\\usuario\\desktop\\repositorios juan\\prpyecto para biblioteca\\firstcoderepository\\bibliotecawebapplication\\bibliotecawebapplication\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|solutionrelative:bibliotecawebapplication\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|c:\\users\\usuario\\desktop\\repositorios juan\\prpyecto para biblioteca\\firstcoderepository\\bibliotecawebapplication\\bibliotecawebapplication\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|solutionrelative:bibliotecawebapplication\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -27,19 +31,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Prpyecto para Biblioteca\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "BibliotecaWebApplication\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Prpyecto para Biblioteca\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "BibliotecaWebApplication\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAACkAAAAAAAAAAAAAADkAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-31T22:13:45.731Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Prpyecto para Biblioteca\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "BibliotecaWebApplication\\Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Prpyecto para Biblioteca\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "BibliotecaWebApplication\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABgAAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-12-31T21:58:15.843Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "site.css",
               "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Prpyecto para Biblioteca\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "BibliotecaWebApplication\\wwwroot\\css\\site.css",
@@ -52,7 +69,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Prpyecto para Biblioteca\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\appsettings.json",
               "RelativeDocumentMoniker": "BibliotecaWebApplication\\appsettings.json",
