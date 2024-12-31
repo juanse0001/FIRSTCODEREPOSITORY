@@ -1,22 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Sebastian\\Repositorios\\FIRSTCODEREPOSITORY Nube\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\",
+  "WorkspaceRootPath": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Prpyecto para Biblioteca\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|c:\\users\\sebastian\\repositorios\\firstcoderepository nube\\firstcoderepository\\bibliotecawebapplication\\bibliotecawebapplication\\views\\autores\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|solutionrelative:bibliotecawebapplication\\views\\autores\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|c:\\users\\sebastian\\repositorios\\firstcoderepository nube\\firstcoderepository\\bibliotecawebapplication\\bibliotecawebapplication\\views\\libros\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|solutionrelative:bibliotecawebapplication\\views\\libros\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|c:\\users\\sebastian\\repositorios\\firstcoderepository nube\\firstcoderepository\\bibliotecawebapplication\\bibliotecawebapplication\\views\\libros\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|solutionrelative:bibliotecawebapplication\\views\\libros\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|c:\\users\\sebastian\\repositorios\\firstcoderepository nube\\firstcoderepository\\bibliotecawebapplication\\bibliotecawebapplication\\views\\autores\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|solutionrelative:bibliotecawebapplication\\views\\autores\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|c:\\users\\usuario\\desktop\\repositorios juan\\prpyecto para biblioteca\\firstcoderepository\\bibliotecawebapplication\\bibliotecawebapplication\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|solutionrelative:bibliotecawebapplication\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,60 +13,20 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 199,
-          "SelectedChildIndex": 1,
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Delete.cshtml",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\Repositorios\\FIRSTCODEREPOSITORY Nube\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\Views\\Libros\\Delete.cshtml",
-              "RelativeDocumentMoniker": "BibliotecaWebApplication\\Views\\Libros\\Delete.cshtml",
-              "ToolTip": "C:\\Users\\Sebastian\\Repositorios\\FIRSTCODEREPOSITORY Nube\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\Views\\Libros\\Delete.cshtml",
-              "RelativeToolTip": "BibliotecaWebApplication\\Views\\Libros\\Delete.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-26T16:41:11.301Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\Repositorios\\FIRSTCODEREPOSITORY Nube\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\Views\\Autores\\Create.cshtml",
-              "RelativeDocumentMoniker": "BibliotecaWebApplication\\Views\\Autores\\Create.cshtml",
-              "ToolTip": "C:\\Users\\Sebastian\\Repositorios\\FIRSTCODEREPOSITORY Nube\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\Views\\Autores\\Create.cshtml",
-              "RelativeToolTip": "BibliotecaWebApplication\\Views\\Autores\\Create.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-26T16:53:41.601Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\Repositorios\\FIRSTCODEREPOSITORY Nube\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\Views\\Libros\\Create.cshtml",
-              "RelativeDocumentMoniker": "BibliotecaWebApplication\\Views\\Libros\\Create.cshtml",
-              "ToolTip": "C:\\Users\\Sebastian\\Repositorios\\FIRSTCODEREPOSITORY Nube\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\Views\\Libros\\Create.cshtml",
-              "RelativeToolTip": "BibliotecaWebApplication\\Views\\Libros\\Create.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACoAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-26T16:52:55.378Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Delete.cshtml",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\Repositorios\\FIRSTCODEREPOSITORY Nube\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\Views\\Autores\\Delete.cshtml",
-              "RelativeDocumentMoniker": "BibliotecaWebApplication\\Views\\Autores\\Delete.cshtml",
-              "ToolTip": "C:\\Users\\Sebastian\\Repositorios\\FIRSTCODEREPOSITORY Nube\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\Views\\Autores\\Delete.cshtml",
-              "RelativeToolTip": "BibliotecaWebApplication\\Views\\Autores\\Delete.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-26T16:41:09.309Z",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Prpyecto para Biblioteca\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\appsettings.json",
+              "RelativeDocumentMoniker": "BibliotecaWebApplication\\appsettings.json",
+              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Prpyecto para Biblioteca\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\appsettings.json",
+              "RelativeToolTip": "BibliotecaWebApplication\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-31T21:29:41.225Z",
               "EditorCaption": ""
             }
           ]
