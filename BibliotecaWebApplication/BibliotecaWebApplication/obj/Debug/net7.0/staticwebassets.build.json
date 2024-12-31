@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "25bxBxPP8CEC3U7Q5mR/pGOUILLHsS1XP+x6lJRoDVs=",
+  "Hash": "o9IPnDVbdXOdvvI9HNUXjuRFAGMGXljZCBTgqOdjniA=",
   "Source": "BibliotecaWebApplication",
   "BasePath": "_content/BibliotecaWebApplication",
   "Mode": "Default",
@@ -1214,6 +1214,25 @@
       "OriginalItemSpec": "wwwroot\\css\\img\\846-140823862_tiny.jpg"
     },
     {
+      "Identity": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Prpyecto para Biblioteca\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\wwwroot\\css\\img\\curiosidades-sobre-bibliotecas-que-debes-conocer-ahora-mismo.jpg",
+      "SourceId": "BibliotecaWebApplication",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Prpyecto para Biblioteca\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\wwwroot\\",
+      "BasePath": "_content/BibliotecaWebApplication",
+      "RelativePath": "css/img/curiosidades-sobre-bibliotecas-que-debes-conocer-ahora-mismo.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\img\\curiosidades-sobre-bibliotecas-que-debes-conocer-ahora-mismo.jpg"
+    },
+    {
       "Identity": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Prpyecto para Biblioteca\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\wwwroot\\css\\img\\gran-biblioteca-estantes-infinitos-ia-generativa-fondo-panoramico_918839-3746.jpg",
       "SourceId": "BibliotecaWebApplication",
       "SourceType": "Discovered",
@@ -1288,6 +1307,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\img\\libro-magico-abierto-cuentos-hadas_763713-614.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Prpyecto para Biblioteca\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\wwwroot\\css\\img\\R.jpg",
+      "SourceId": "BibliotecaWebApplication",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Prpyecto para Biblioteca\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\wwwroot\\",
+      "BasePath": "_content/BibliotecaWebApplication",
+      "RelativePath": "css/img/R.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\img\\R.jpg"
     },
     {
       "Identity": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Prpyecto para Biblioteca\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\wwwroot\\css\\site.css",
