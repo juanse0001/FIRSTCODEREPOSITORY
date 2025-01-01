@@ -1,28 +1,3 @@
-/* Estilos generales */
-body {
-    font-family: 'Comic Sans MS', cursive; /* O una fuente similar a las caricaturas */
-    background: linear-gradient(to bottom, #D2B48C, #F5DEB3); /* Degradado de café claro */
-    color: #000; /* Texto negro para mejor contraste sobre el fondo claro */
-}
-
-
-/* Estilos para las barras de navegaci�n */
-nav {
-    background-color: #00468b; /* Azul m�s oscuro para las barras */
-    color: #fff;
-}
-
-/* Estilos para el bot�n "Create New" */
-a.create-new-button {
-    background-color: #007bff; /* Azul claro, similar al de Bootstrap */
-    color: #fff; /* Texto blanco */
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none; /* Quitar subrayado */
-    font-weight: bold;
-}
-
-/*
 html {
   font-size: 14px;
 }
@@ -45,4 +20,3 @@ html {
 body {
   margin-bottom: 60px;
 }
-*/

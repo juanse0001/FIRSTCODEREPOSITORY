@@ -1,10 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Prpyecto para Biblioteca\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\",
+  "WorkspaceRootPath": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Proyecto para Biblioteca\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|c:\\users\\usuario\\desktop\\repositorios juan\\prpyecto para biblioteca\\firstcoderepository\\bibliotecawebapplication\\bibliotecawebapplication\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|solutionrelative:bibliotecawebapplication\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|c:\\users\\usuario\\desktop\\repositorios juan\\proyecto para biblioteca\\firstcoderepository\\bibliotecawebapplication\\bibliotecawebapplication\\controllers\\autorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|solutionrelative:bibliotecawebapplication\\controllers\\autorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|c:\\users\\usuario\\desktop\\repositorios juan\\proyecto para biblioteca\\firstcoderepository\\bibliotecawebapplication\\bibliotecawebapplication\\controllers\\libroscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|solutionrelative:bibliotecawebapplication\\controllers\\libroscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,15 +22,34 @@
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LibrosController.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Proyecto para Biblioteca\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\Controllers\\LibrosController.cs",
+              "RelativeDocumentMoniker": "BibliotecaWebApplication\\Controllers\\LibrosController.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Proyecto para Biblioteca\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\Controllers\\LibrosController.cs",
+              "RelativeToolTip": "BibliotecaWebApplication\\Controllers\\LibrosController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAA2wCMAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-01T23:02:25.227Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Prpyecto para Biblioteca\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\appsettings.json",
-              "RelativeDocumentMoniker": "BibliotecaWebApplication\\appsettings.json",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Prpyecto para Biblioteca\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\appsettings.json",
-              "RelativeToolTip": "BibliotecaWebApplication\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-12-31T21:29:41.225Z",
+              "Title": "AutoresController.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Proyecto para Biblioteca\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\Controllers\\AutoresController.cs",
+              "RelativeDocumentMoniker": "BibliotecaWebApplication\\Controllers\\AutoresController.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Proyecto para Biblioteca\\FIRSTCODEREPOSITORY\\BibliotecaWebApplication\\BibliotecaWebApplication\\Controllers\\AutoresController.cs",
+              "RelativeToolTip": "BibliotecaWebApplication\\Controllers\\AutoresController.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAiwCoAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-01T23:02:08.036Z",
               "EditorCaption": ""
             }
           ]
