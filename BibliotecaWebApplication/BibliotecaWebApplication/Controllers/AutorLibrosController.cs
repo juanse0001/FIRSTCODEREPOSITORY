@@ -25,7 +25,7 @@ public class AutorLibrosController : Controller
         return View(autorLibros);
     }
 
-    // GET: AutorLibros/Details/5
+    // GET: AutorLibros/Details
     [Authorize(Roles = "Bibliotecario, Administrador")]
     public async Task<IActionResult> Details(Guid? autorId, Guid? libroId)
     {
@@ -38,6 +38,7 @@ public class AutorLibrosController : Controller
             .Include(a => a.Autor)
             .Include(a => a.Libro)
             .FirstOrDefaultAsync(m => m.AutorId == autorId && m.LibroId == libroId);
+
         if (autorLibro == null)
         {
             return NotFound();
@@ -50,8 +51,8 @@ public class AutorLibrosController : Controller
     [Authorize(Roles = "Administrador")]
     public IActionResult Create()
     {
-        ViewData["AutorId"] = new SelectList(_context.Autores, "AutorId", "NombreCompleto");
-        ViewData["LibroId"] = new SelectList(_context.Libros, "LibroId", "Titulo");
+        ViewData["AutorId"] = new SelectList(_context.Autores.ToList(), "AutorId", "NombreCompleto");
+        ViewData["LibroId"] = new SelectList(_context.Libros.ToList(), "LibroId", "Titulo");
         return View();
     }
 
@@ -63,15 +64,14 @@ public class AutorLibrosController : Controller
     {
         if (ModelState.IsValid)
         {
-            // Verificar si la relación ya existe
             var existingRelation = await _context.AutorLibros
                 .FirstOrDefaultAsync(al => al.AutorId == autorLibro.AutorId && al.LibroId == autorLibro.LibroId);
 
             if (existingRelation != null)
             {
                 ModelState.AddModelError("", "Esta relación autor-libro ya existe.");
-                ViewData["AutorId"] = new SelectList(_context.Autores, "AutorId", "NombreCompleto", autorLibro.AutorId);
-                ViewData["LibroId"] = new SelectList(_context.Libros, "LibroId", "Titulo", autorLibro.LibroId);
+                ViewData["AutorId"] = new SelectList(_context.Autores.ToList(), "AutorId", "NombreCompleto", autorLibro.AutorId);
+                ViewData["LibroId"] = new SelectList(_context.Libros.ToList(), "LibroId", "Titulo", autorLibro.LibroId);
                 return View(autorLibro);
             }
 
@@ -79,12 +79,13 @@ public class AutorLibrosController : Controller
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-        ViewData["AutorId"] = new SelectList(_context.Autores, "AutorId", "NombreCompleto", autorLibro.AutorId);
-        ViewData["LibroId"] = new SelectList(_context.Libros, "LibroId", "Titulo", autorLibro.LibroId);
+
+        ViewData["AutorId"] = new SelectList(_context.Autores.ToList(), "AutorId", "NombreCompleto", autorLibro.AutorId);
+        ViewData["LibroId"] = new SelectList(_context.Libros.ToList(), "LibroId", "Titulo", autorLibro.LibroId);
         return View(autorLibro);
     }
 
-    // GET: AutorLibros/Edit/5
+    // GET: AutorLibros/Edit
     [Authorize(Roles = "Administrador")]
     public async Task<IActionResult> Edit(Guid? autorId, Guid? libroId)
     {
@@ -95,16 +96,18 @@ public class AutorLibrosController : Controller
 
         var autorLibro = await _context.AutorLibros
             .FirstOrDefaultAsync(al => al.AutorId == autorId && al.LibroId == libroId);
+
         if (autorLibro == null)
         {
             return NotFound();
         }
-        ViewData["AutorId"] = new SelectList(_context.Autores, "AutorId", "NombreCompleto", autorLibro.AutorId);
-        ViewData["LibroId"] = new SelectList(_context.Libros, "LibroId", "Titulo", autorLibro.LibroId);
+
+        ViewData["AutorId"] = new SelectList(_context.Autores.ToList(), "AutorId", "NombreCompleto", autorLibro.AutorId);
+        ViewData["LibroId"] = new SelectList(_context.Libros.ToList(), "LibroId", "Titulo", autorLibro.LibroId);
         return View(autorLibro);
     }
 
-    // POST: AutorLibros/Edit/5
+    // POST: AutorLibros/Edit
     [HttpPost]
     [ValidateAntiForgeryToken]
     [Authorize(Roles = "Administrador")]
@@ -135,12 +138,13 @@ public class AutorLibrosController : Controller
             }
             return RedirectToAction(nameof(Index));
         }
-        ViewData["AutorId"] = new SelectList(_context.Autores, "AutorId", "NombreCompleto", autorLibro.AutorId);
-        ViewData["LibroId"] = new SelectList(_context.Libros, "LibroId", "Titulo", autorLibro.LibroId);
+
+        ViewData["AutorId"] = new SelectList(_context.Autores.ToList(), "AutorId", "NombreCompleto", autorLibro.AutorId);
+        ViewData["LibroId"] = new SelectList(_context.Libros.ToList(), "LibroId", "Titulo", autorLibro.LibroId);
         return View(autorLibro);
     }
 
-    // GET: AutorLibros/Delete/5
+    // GET: AutorLibros/Delete
     [Authorize(Roles = "Administrador")]
     public async Task<IActionResult> Delete(Guid? autorId, Guid? libroId)
     {
@@ -153,6 +157,7 @@ public class AutorLibrosController : Controller
             .Include(a => a.Autor)
             .Include(a => a.Libro)
             .FirstOrDefaultAsync(m => m.AutorId == autorId && m.LibroId == libroId);
+
         if (autorLibro == null)
         {
             return NotFound();
@@ -161,7 +166,7 @@ public class AutorLibrosController : Controller
         return View(autorLibro);
     }
 
-    // POST: AutorLibros/Delete/5
+    // POST: AutorLibros/Delete
     [HttpPost, ActionName("Delete")]
     [ValidateAntiForgeryToken]
     [Authorize(Roles = "Administrador")]
@@ -169,6 +174,7 @@ public class AutorLibrosController : Controller
     {
         var autorLibro = await _context.AutorLibros
             .FirstOrDefaultAsync(al => al.AutorId == autorId && al.LibroId == libroId);
+
         if (autorLibro != null)
         {
             _context.AutorLibros.Remove(autorLibro);

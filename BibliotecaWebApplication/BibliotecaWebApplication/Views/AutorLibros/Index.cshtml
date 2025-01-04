@@ -1,41 +1,35 @@
 ﻿@model IEnumerable<BibliotecaWebApplication.Models.AutorLibro>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Relaciones Autor - Libro";
 }
 
-<h1>Index</h1>
+<h1>Relaciones Autor - Libro</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-primary">Crear Nueva Relación</a>
 </p>
-<table class="table">
+
+<table class="table table-striped">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Autor)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Libro)
-            </th>
-            <th></th>
+            <th>@Html.DisplayName("Autor")</th>
+            <th>@Html.DisplayName("Libro")</th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Autor.AutorId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Libro.LibroId)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Autor.Nombres)</td>
+                <td>@Html.DisplayFor(modelItem => item.Libro.Titulo)</td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { autorId = item.AutorId, libroId = item.LibroId }, new { @class = "btn btn-sm btn-warning" })
+                    @Html.ActionLink("Detalles", "Details", new { autorId = item.AutorId, libroId = item.LibroId }, new { @class = "btn btn-sm btn-info" })
+                    @Html.ActionLink("Eliminar", "Delete", new { autorId = item.AutorId, libroId = item.LibroId }, new { @class = "btn btn-sm btn-danger" })
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
