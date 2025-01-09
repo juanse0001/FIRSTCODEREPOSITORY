@@ -9,11 +9,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace BibliotecaWebApplication.Data.Migrations
+namespace BibliotecaWebApplication.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240812223941_Libro")]
-    partial class Libro
+    [Migration("20240820172550_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -48,10 +48,26 @@ namespace BibliotecaWebApplication.Data.Migrations
                     b.ToTable("Autores");
                 });
 
+            modelBuilder.Entity("BibliotecaWebApplication.Models.AutorLibro", b =>
+                {
+                    b.Property<Guid>("AutorId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("LibroId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("AutorId", "LibroId");
+
+                    b.HasIndex("LibroId");
+
+                    b.ToTable("AutorLibros");
+                });
+
             modelBuilder.Entity("BibliotecaWebApplication.Models.Libro", b =>
                 {
-                    b.Property<string>("LibroId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<Guid>("LibroId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ISBN")
                         .IsRequired()
@@ -213,24 +229,19 @@ namespace BibliotecaWebApplication.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderKey")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("LoginProvider", "ProviderKey");
-
-                    b.HasIndex("UserId");
+                    b.HasKey("UserId", "LoginProvider", "ProviderKey");
 
                     b.ToTable("AspNetUserLogins", (string)null);
                 });
@@ -256,12 +267,10 @@ namespace BibliotecaWebApplication.Data.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
@@ -269,6 +278,25 @@ namespace BibliotecaWebApplication.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("BibliotecaWebApplication.Models.AutorLibro", b =>
+                {
+                    b.HasOne("BibliotecaWebApplication.Models.Autor", "Autor")
+                        .WithMany("AutorLibros")
+                        .HasForeignKey("AutorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BibliotecaWebApplication.Models.Libro", "Libro")
+                        .WithMany("LibroAutores")
+                        .HasForeignKey("LibroId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Autor");
+
+                    b.Navigation("Libro");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -320,6 +348,16 @@ namespace BibliotecaWebApplication.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("BibliotecaWebApplication.Models.Autor", b =>
+                {
+                    b.Navigation("AutorLibros");
+                });
+
+            modelBuilder.Entity("BibliotecaWebApplication.Models.Libro", b =>
+                {
+                    b.Navigation("LibroAutores");
                 });
 #pragma warning restore 612, 618
         }

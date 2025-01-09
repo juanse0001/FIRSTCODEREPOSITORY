@@ -1,0 +1,17 @@
+﻿@model BibliotecaWebApplication.Models.ViewModels.RoleViewModel
+
+<h2>Delete Role</h2>
+
+<div class="alert alert-danger" role="alert">
+    <h4 class="alert-heading">Confirm Deletion</h4>
+    <p>Are you sure you want to delete the role '@Model.Name'? This action cannot be undone.</p>
+    <hr>
+    <form asp-action="Delete" asp-route-id="@Model.Id" method="post">
+        <button type="submit" class="btn btn-danger">
+            <i class="bi bi-trash-fill"></i> Delete Role
+        </button>
+        <a asp-action="Index" class="btn btn-secondary">
+            <i class="bi bi-x-circle"></i> Cancel
+        </a>
+    </form>
+</div>
