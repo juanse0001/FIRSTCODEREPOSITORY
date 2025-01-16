@@ -6,10 +6,12 @@ namespace BibliotecaWebApplication.Models
     {
         [Required]
         public Guid AutorId { get; set; } 
-        public Autor Autor { get; set; }
+
+        public Autor? Autor { get; set; }
 
         [Required]
         public Guid LibroId { get; set; }
-        public Libro Libro { get; set; }
+
+        public Libro? Libro { get; set; }
     }
 }

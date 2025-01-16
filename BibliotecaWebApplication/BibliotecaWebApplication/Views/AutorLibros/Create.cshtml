@@ -6,58 +6,56 @@
 
 <h1>Crear Relación Autor-Libro</h1>
 
-<h4>Complete los detalles para la relación entre Autor y Libro</h4>
-<hr />
+<div class="alert alert-success" role="alert" style="display: none;" id="successMessage"></div>
+<div class="alert alert-danger" role="alert" style="display: none;" id="errorMessage"></div>
 
-<div class="row">
-    <div class="col-md-6">
-        <form asp-action="Create" asp-controller="AutorLibros">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-            <!-- Autor Dropdown -->
-            <div class="form-group">
-                <label for="AutorId" class="control-label">Autor</label>
-                <select asp-for="AutorId" asp-items="ViewBag.AutorId" class="form-control">
-                    <option value="">Seleccionar Autor</option>
-                </select>
-                <span asp-validation-for="AutorId" class="text-danger"></span>
-            </div>
-
-            <!-- Libro Dropdown -->
-            <div class="form-group">
-                <label for="LibroId" class="control-label">Libro</label>
-                <select asp-for="LibroId" asp-items="ViewBag.LibroId" class="form-control">
-                    <option value="">Seleccionar Libro</option>
-                </select>
-                <span asp-validation-for="LibroId" class="text-danger"></span>
-            </div>
-
-            <!-- Botones de Guardar y Cancelar -->
-            <div class="form-group">
-                <input type="submit" value="Guardar" class="btn btn-primary" />
-                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
-            </div>
-
-            <!-- Mensajes de éxito o error -->
-            @if (TempData["SuccessMessage"] != null)
-            {
-                <div class="alert alert-success">
-                    @TempData["SuccessMessage"]
-                </div>
-            }
-
-            @if (TempData["ErrorMessage"] != null)
-            {
-                <div class="alert alert-danger">
-                    @TempData["ErrorMessage"]
-                </div>
-            }
-        </form>
+<form asp-action="Create" method="post">
+    <div class="mb-3">
+        <label for="AutorId" class="form-label">Autor</label>
+        <select id="AutorId" name="AutorId" class="form-select" required>
+            <option value="">Seleccione un autor</option>
+        </select>
     </div>
-</div>
+
+    <div class="mb-3">
+        <label for="LibroId" class="form-label">Libro</label>
+        <select id="LibroId" name="LibroId" class="form-select" required>
+            <option value="">Seleccione un libro</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
 
 @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Cargar autores
+            $.get('/AutorLibros/GetAutores', function (data) {
+                const autorSelect = $('#AutorId');
+                data.forEach(function (autor) {
+                    autorSelect.append(`<option value="${autor.autorId}">${autor.nombre}</option>`);
+                });
+            }).fail(function () {
+                $('#errorMessage').text('Error al cargar los autores.').show();
+            });
+
+            // Cargar libros
+            $.get('/AutorLibros/GetLibros', function (data) {
+                const libroSelect = $('#LibroId');
+                data.forEach(function (libro) {
+                    libroSelect.append(`<option value="${libro.libroId}">${libro.titulo}</option>`);
+                });
+            }).fail(function () {
+                $('#errorMessage').text('Error al cargar los libros.').show();
+            });
+
+            // Mostrar mensaje de éxito si existe
+            const successMessage = '@TempData["SuccessMessage"]';
+            if (successMessage) {
+                $('#successMessage').text(successMessage).show();
+            }
+        });
+    </script>
 }

@@ -1,50 +1,43 @@
 ﻿@model BibliotecaWebApplication.Models.AutorLibro
 
 @{
-    ViewData["Title"] = "Edit AutorLibro";
+    ViewData["Title"] = "Editar Relación Autor-Libro";
 }
 
-<h1>Edit AutorLibro</h1>
+<h1>Editar Relación Autor-Libro</h1>
 
-<h4>Edit the AutorLibro relationship</h4>
 <hr />
-
 <div class="row">
-    <div class="col-md-6">
-        <form asp-action="Edit" asp-controller="AutorLibros" method="post">
+    <div class="col-md-4">
+        <form asp-action="Edit" asp-route-autorId="@Model.AutorId" asp-route-libroId="@Model.LibroId">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-            <!-- Campo oculto para mantener las claves originales -->
             <input type="hidden" asp-for="AutorId" />
             <input type="hidden" asp-for="LibroId" />
-
-            <!-- Dropdown para seleccionar un nuevo Autor -->
             <div class="form-group">
-                <label asp-for="AutorId" class="control-label">Autor</label>
-                <select asp-for="AutorId" asp-items="ViewBag.AutorId" class="form-control">
-                    <option value="">Seleccione un autor</option>
-                </select>
+                <label asp-for="AutorId">Autor:</label>
+                <select asp-for="AutorId" class="form-control" id="AutorId"></select>
                 <span asp-validation-for="AutorId" class="text-danger"></span>
             </div>
-
-            <!-- Dropdown para seleccionar un nuevo Libro -->
             <div class="form-group">
-                <label asp-for="LibroId" class="control-label">Libro</label>
-                <select asp-for="LibroId" asp-items="ViewBag.LibroId" class="form-control">
-                    <option value="">Seleccione un libro</option>
-                </select>
+                <label asp-for="LibroId">Libro:</label>
+                <select asp-for="LibroId" class="form-control" id="LibroId"></select>
                 <span asp-validation-for="LibroId" class="text-danger"></span>
             </div>
-
-            <!-- Botones para guardar o cancelar -->
             <div class="form-group">
                 <input type="submit" value="Guardar" class="btn btn-primary" />
-                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
             </div>
         </form>
     </div>
 </div>
 
 @section Scripts {
-    @await Html.PartialAsync("_ValidationScriptsPartial")
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        $(document).ready(function () {
+            $("#AutorId").select2();
+            $("#LibroId").select2();
+        });
+    </script>
 }
