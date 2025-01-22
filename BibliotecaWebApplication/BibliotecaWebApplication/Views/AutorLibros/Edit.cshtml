@@ -1,34 +1,36 @@
 ﻿@model BibliotecaWebApplication.Models.AutorLibro
 
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+
 @{
     ViewData["Title"] = "Editar Relación Autor-Libro";
 }
 
 <h1>Editar Relación Autor-Libro</h1>
 
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit" asp-route-autorId="@Model.AutorId" asp-route-libroId="@Model.LibroId">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="AutorId" />
-            <input type="hidden" asp-for="LibroId" />
-            <div class="form-group">
-                <label asp-for="AutorId">Autor:</label>
-                <select asp-for="AutorId" class="form-control" id="AutorId"></select>
-                <span asp-validation-for="AutorId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LibroId">Libro:</label>
-                <select asp-for="LibroId" class="form-control" id="LibroId"></select>
-                <span asp-validation-for="LibroId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Guardar" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
+<div class="alert alert-success" role="alert" style="display:none;" id="successMessage">
+    @TempData["SuccessMessage"]
 </div>
+<div class="alert alert-danger" role="alert" id="errorMessage" asp-validation-summary="ModelOnly"></div>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="AutorId" />
+    <input type="hidden" asp-for="LibroId" />
+
+    <div class="mb-3">
+        <label asp-for="AutorId" class="form-label">Autor</label>
+        <select asp-for="AutorId" class="form-select" asp-items="@ViewBag.Autores"></select>
+        <span asp-validation-for="AutorId" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="LibroId" class="form-label">Libro</label>
+        <select asp-for="LibroId" class="form-select" asp-items="@ViewBag.Libros"></select>
+        <span asp-validation-for="LibroId" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+</form>
 
 @section Scripts {
     @{
@@ -36,8 +38,13 @@
     }
     <script>
         $(document).ready(function () {
-            $("#AutorId").select2();
-            $("#LibroId").select2();
+            const successMessageDiv = document.getElementById('successMessage');
+            if (successMessageDiv.textContent.trim() !== '') {
+                successMessageDiv.style.display = 'block';
+                setTimeout(() => {
+                    successMessageDiv.style.display = 'none';
+                }, 5000);
+            }
         });
     </script>
 }

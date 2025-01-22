@@ -21,7 +21,7 @@ namespace BibliotecaWebApplication.Controllers
         //Metodos utilizando ajax para optimizar las listas
 
         [HttpGet]
-        public async Task<IActionResult> GetAutores()
+        public async Task<IActionResult> GetAutores()   
         {
             var autores = await _context.Autores
                 .Select(a => new { a.AutorId, Nombre = $"{a.Nombres} {a.Apellidos}" })
@@ -75,9 +75,14 @@ namespace BibliotecaWebApplication.Controllers
             return View(autorLibro);
         }
 
-        // 2. Editar una relación existente entre autor y libro
+        [HttpGet]
         public async Task<IActionResult> Edit(Guid autorId, Guid libroId)
         {
+            if (autorId == Guid.Empty || libroId == Guid.Empty)
+            {
+                return NotFound();
+            }
+
             var autorLibro = await _context.AutorLibros
                 .FirstOrDefaultAsync(al => al.AutorId == autorId && al.LibroId == libroId);
 
@@ -86,13 +91,21 @@ namespace BibliotecaWebApplication.Controllers
                 return NotFound();
             }
 
-            await CargarDropdowns(autorLibro);
+            // Obtener listas para los dropdowns usando SelectList
+            ViewData["Autores"] = new SelectList(await _context.Autores
+                .Select(a => new { a.AutorId, Nombre = $"{a.Nombres} {a.Apellidos}" })
+                .ToListAsync(), "AutorId", "Nombre", autorLibro.AutorId); // Selecciona el valor actual
+
+            ViewData["Libros"] = new SelectList(await _context.Libros
+                .Select(l => new { l.LibroId, l.Titulo })
+                .ToListAsync(), "LibroId", "Titulo", autorLibro.LibroId); // Selecciona el valor actual
+
             return View(autorLibro);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid autorId, Guid libroId, [Bind("AutorId, LibroId")] AutorLibro autorLibro)
+        public async Task<IActionResult> Edit(Guid autorId, Guid libroId, AutorLibro autorLibro)
         {
             if (autorId != autorLibro.AutorId || libroId != autorLibro.LibroId)
             {
@@ -103,39 +116,50 @@ namespace BibliotecaWebApplication.Controllers
             {
                 try
                 {
-                    _context.Update(autorLibro); // Simplificar la lógica de actualización
+                    _context.Attach(autorLibro).State = EntityState.Modified;
                     await _context.SaveChangesAsync();
 
                     TempData["SuccessMessage"] = "Relación actualizada con éxito.";
                     return RedirectToAction(nameof(Index));
                 }
-                catch (DbUpdateConcurrencyException) // Manejar concurrencia
+                catch (DbUpdateConcurrencyException)
                 {
-                    if (!AutorLibroExists(autorId, libroId))
+                    if (!AutorLibroExists(autorLibro.AutorId, autorLibro.LibroId))
                     {
                         return NotFound();
                     }
                     else
                     {
+                        ModelState.AddModelError("", "El registro fue modificado por otro usuario.");
                         throw;
                     }
                 }
                 catch (DbUpdateException ex)
                 {
-                    ModelState.AddModelError("", "Error al actualizar la relación: " + ex.Message);
-                    await CargarDropdowns(autorLibro);
-                    return View(autorLibro);
-
+                    ModelState.AddModelError("", "Error al actualizar la relación: " + ex.InnerException?.Message ?? ex.Message);
                 }
             }
-            await CargarDropdowns(autorLibro);
+
+            // Recarga los datos en caso de error
+            ViewBag.Autores = new SelectList(await _context.Autores
+                .Select(a => new { a.AutorId, Nombre = $"{a.Nombres} {a.Apellidos}" })
+                .ToListAsync(), "AutorId", "Nombre", autorLibro.AutorId);
+
+            ViewBag.Libros = new SelectList(await _context.Libros
+                .Select(l => new { l.LibroId, l.Titulo })
+                .ToListAsync(), "LibroId", "Titulo", autorLibro.LibroId);
+
             return View(autorLibro);
         }
 
-        // 3. Eliminar una relación entre autor y libro
+
+
+        // Acción para confirmar la eliminación
         public async Task<IActionResult> Delete(Guid autorId, Guid libroId)
         {
             var autorLibro = await _context.AutorLibros
+                .Include(al => al.Autor)
+                .Include(al => al.Libro)
                 .FirstOrDefaultAsync(al => al.AutorId == autorId && al.LibroId == libroId);
 
             if (autorLibro == null)
@@ -153,13 +177,14 @@ namespace BibliotecaWebApplication.Controllers
             try
             {
                 var autorLibro = await _context.AutorLibros
-               .FirstOrDefaultAsync(al => al.AutorId == autorId && al.LibroId == libroId);
+                    .FirstOrDefaultAsync(al => al.AutorId == autorId && al.LibroId == libroId);
 
                 if (autorLibro != null)
                 {
                     _context.AutorLibros.Remove(autorLibro);
                     await _context.SaveChangesAsync();
                 }
+
                 TempData["SuccessMessage"] = "Relación eliminada con éxito.";
                 return RedirectToAction(nameof(Index));
             }
@@ -168,8 +193,8 @@ namespace BibliotecaWebApplication.Controllers
                 TempData["ErrorMessage"] = "Error al eliminar la relación: " + ex.Message;
                 return RedirectToAction(nameof(Index));
             }
-
         }
+
 
         // 4. Ver los detalles de una relación
         public async Task<IActionResult> Details(Guid autorId, Guid libroId)
