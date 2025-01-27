@@ -75,83 +75,98 @@ namespace BibliotecaWebApplication.Controllers
             return View(autorLibro);
         }
 
-        [HttpGet]
-        public async Task<IActionResult> Edit(Guid autorId, Guid libroId)
+        // GET: AutorLibro/Edit/5
+        public async Task<IActionResult> Edit(Guid? AutorId, Guid? LibroId)
         {
-            if (autorId == Guid.Empty || libroId == Guid.Empty)
+            if (AutorId == null || LibroId == null)
             {
-                return NotFound();
+                TempData["ErrorMessage"] = "IDs de Autor o Libro inválidos."; // Mensaje más descriptivo
+                return RedirectToAction(nameof(Index)); // Redirige al Index en caso de error
             }
 
             var autorLibro = await _context.AutorLibros
-                .FirstOrDefaultAsync(al => al.AutorId == autorId && al.LibroId == libroId);
+                .Include(al => al.Autor) // Incluir información del Autor
+                .Include(al => al.Libro) // Incluir información del Libro
+                .FirstOrDefaultAsync(m => m.AutorId == AutorId && m.LibroId == LibroId);
 
             if (autorLibro == null)
             {
-                return NotFound();
+                TempData["ErrorMessage"] = "No se encontró la relación Autor-Libro.";
+                return RedirectToAction(nameof(Index)); // Redirige al Index si no se encuentra
+                                                        // Alternativa: return NotFound();
             }
-
-            // Obtener listas para los dropdowns usando SelectList
-            ViewData["Autores"] = new SelectList(await _context.Autores
-                .Select(a => new { a.AutorId, Nombre = $"{a.Nombres} {a.Apellidos}" })
-                .ToListAsync(), "AutorId", "Nombre", autorLibro.AutorId); // Selecciona el valor actual
-
-            ViewData["Libros"] = new SelectList(await _context.Libros
-                .Select(l => new { l.LibroId, l.Titulo })
-                .ToListAsync(), "LibroId", "Titulo", autorLibro.LibroId); // Selecciona el valor actual
 
             return View(autorLibro);
         }
 
+        // POST: AutorLibro/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid autorId, Guid libroId, AutorLibro autorLibro)
+        public async Task<IActionResult> Edit(Guid AutorIdOriginal, Guid LibroIdOriginal, [Bind("AutorId,LibroId")] AutorLibro autorLibro)
         {
-            if (autorId != autorLibro.AutorId || libroId != autorLibro.LibroId)
+            if (!ModelState.IsValid)
             {
-                return NotFound();
+                TempData["ErrorMessage"] = "Por favor, verifique los datos ingresados.";
+                return View(autorLibro);
             }
 
-            if (ModelState.IsValid)
+            try
             {
-                try
-                {
-                    _context.Attach(autorLibro).State = EntityState.Modified;
-                    await _context.SaveChangesAsync();
+                // 1. Verificar si la relación original existe
+                var existingRelacion = await _context.AutorLibros
+                    .FirstOrDefaultAsync(al => al.AutorId == AutorIdOriginal && al.LibroId == LibroIdOriginal);
 
-                    TempData["SuccessMessage"] = "Relación actualizada con éxito.";
+                if (existingRelacion == null)
+                {
+                    TempData["ErrorMessage"] = "No se encontró la relación Autor-Libro original.";
                     return RedirectToAction(nameof(Index));
                 }
-                catch (DbUpdateConcurrencyException)
+
+                // 2. Verificar si los valores nuevos son diferentes
+                if (AutorIdOriginal == autorLibro.AutorId && LibroIdOriginal == autorLibro.LibroId)
                 {
-                    if (!AutorLibroExists(autorLibro.AutorId, autorLibro.LibroId))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        ModelState.AddModelError("", "El registro fue modificado por otro usuario.");
-                        throw;
-                    }
+                    TempData["InfoMessage"] = "No se detectaron cambios en la relación.";
+                    return RedirectToAction(nameof(Index));
                 }
-                catch (DbUpdateException ex)
+
+                // 3. Verificar si la nueva relación ya existe para evitar duplicados
+                var relacionDuplicada = await _context.AutorLibros
+                    .AnyAsync(al => al.AutorId == autorLibro.AutorId && al.LibroId == autorLibro.LibroId);
+
+                if (relacionDuplicada)
                 {
-                    ModelState.AddModelError("", "Error al actualizar la relación: " + ex.InnerException?.Message ?? ex.Message);
+                    TempData["ErrorMessage"] = "Ya existe una relación con los valores seleccionados.";
+                    return View(autorLibro);
                 }
+
+                // 4. Eliminar la relación existente
+                _context.AutorLibros.Remove(existingRelacion);
+
+                // 5. Crear una nueva relación con los valores actualizados
+                var nuevaRelacion = new AutorLibro
+                {
+                    AutorId = autorLibro.AutorId,
+                    LibroId = autorLibro.LibroId
+                };
+                _context.AutorLibros.Add(nuevaRelacion);
+
+                // 6. Guardar los cambios
+                await _context.SaveChangesAsync();
+
+                TempData["SuccessMessage"] = "Relación Autor-Libro actualizada correctamente.";
+                return RedirectToAction(nameof(Index));
             }
-
-            // Recarga los datos en caso de error
-            ViewBag.Autores = new SelectList(await _context.Autores
-                .Select(a => new { a.AutorId, Nombre = $"{a.Nombres} {a.Apellidos}" })
-                .ToListAsync(), "AutorId", "Nombre", autorLibro.AutorId);
-
-            ViewBag.Libros = new SelectList(await _context.Libros
-                .Select(l => new { l.LibroId, l.Titulo })
-                .ToListAsync(), "LibroId", "Titulo", autorLibro.LibroId);
-
-            return View(autorLibro);
+            catch (DbUpdateException ex)
+            {
+                TempData["ErrorMessage"] = "Error al guardar en la base de datos: " + ex.Message;
+                return View(autorLibro);
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = "Error inesperado: " + ex.Message;
+                return View(autorLibro);
+            }
         }
-
 
 
         // Acción para confirmar la eliminación

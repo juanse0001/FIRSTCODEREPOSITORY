@@ -1,7 +1,5 @@
 ﻿@model BibliotecaWebApplication.Models.AutorLibro
 
-@using Microsoft.AspNetCore.Mvc.TagHelpers
-
 @{
     ViewData["Title"] = "Editar Relación Autor-Libro";
 }
@@ -11,39 +9,108 @@
 <div class="alert alert-success" role="alert" style="display:none;" id="successMessage">
     @TempData["SuccessMessage"]
 </div>
-<div class="alert alert-danger" role="alert" id="errorMessage" asp-validation-summary="ModelOnly"></div>
+<div class="alert alert-danger" role="alert" style="display:none;" id="errorMessage">
+    @TempData["ErrorMessage"]
+</div>
 
-<form asp-action="Edit" method="post">
-    <input type="hidden" asp-for="AutorId" />
-    <input type="hidden" asp-for="LibroId" />
-
+<form id="editForm" asp-action="Edit" method="post">
+    <input type="hidden" name="AutorIdOriginal" value="@Model.AutorId" />
+    <input type="hidden" name="LibroIdOriginal" value="@Model.LibroId" />
     <div class="mb-3">
-        <label asp-for="AutorId" class="form-label">Autor</label>
-        <select asp-for="AutorId" class="form-select" asp-items="@ViewBag.Autores"></select>
+        <label for="autorSelect" class="form-label">Autor</label>
+        <select id="autorSelect" name="AutorId" class="form-select" required>
+            <option value="">Cargando autores...</option>
+        </select>
         <span asp-validation-for="AutorId" class="text-danger"></span>
     </div>
-
     <div class="mb-3">
-        <label asp-for="LibroId" class="form-label">Libro</label>
-        <select asp-for="LibroId" class="form-select" asp-items="@ViewBag.Libros"></select>
+        <label for="libroSelect" class="form-label">Libro</label>
+        <select id="libroSelect" name="LibroId" class="form-select" required>
+            <option value="">Cargando libros...</option>
+        </select>
         <span asp-validation-for="LibroId" class="text-danger"></span>
     </div>
-
     <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
 </form>
 
 @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+    @await Html.PartialAsync("_ValidationScriptsPartial")
     <script>
         $(document).ready(function () {
-            const successMessageDiv = document.getElementById('successMessage');
-            if (successMessageDiv.textContent.trim() !== '') {
-                successMessageDiv.style.display = 'block';
-                setTimeout(() => {
-                    successMessageDiv.style.display = 'none';
-                }, 5000);
+            // Función para cargar autores
+            function cargarAutores() {
+                $.getJSON('/AutorLibros/GetAutores', function (data) {
+                    let autorSelect = $('#autorSelect');
+                    autorSelect.empty().append('<option value="">Seleccione un autor</option>');
+                    if (data.length === 0) {
+                        autorSelect.append('<option value="">No hay autores disponibles</option>');
+                    } else {
+                        $.each(data, function (i, autor) {
+                            autorSelect.append(`<option value="${autor.autorId}">${autor.nombre}</option>`);
+                        });
+                        autorSelect.val('@Model.AutorId'); // Seleccionar el autor actual
+                    }
+                });
+            }
+
+            // Función para cargar libros
+            function cargarLibros() {
+                $.getJSON('/AutorLibros/GetLibros', function (data) {
+                    let libroSelect = $('#libroSelect');
+                    libroSelect.empty().append('<option value="">Seleccione un libro</option>');
+                    if (data.length === 0) {
+                        libroSelect.append('<option value="">No hay libros disponibles</option>');
+                    } else {
+                        $.each(data, function (i, libro) {
+                            libroSelect.append(`<option value="${libro.libroId}">${libro.titulo}</option>`);
+                        });
+                        libroSelect.val('@Model.LibroId'); // Seleccionar el libro actual
+                    }
+                });
+            }
+
+            // Llamar funciones para cargar datos
+            cargarAutores();
+            cargarLibros();
+
+            // Manejo del envío del formulario con AJAX
+            $('#editForm').submit(function (e) {
+                e.preventDefault(); // Evita la recarga de la página
+                const form = $(this);
+
+                $.ajax({
+                    type: 'POST',
+                    url: form.attr('action'),
+                    data: form.serialize(),
+                    success: function (response) {
+                        if (response.success) {
+                            $('#successMessage').text(response.message).show();
+                            setTimeout(() => $('#successMessage').hide(), 5000);
+                        } else {
+                            $('#errorMessage').text(response.message).show();
+                            setTimeout(() => $('#errorMessage').hide(), 5000);
+                        }
+                    },
+                    error: function () {
+                        $('#errorMessage').text('Ocurrió un error inesperado.').show();
+                        setTimeout(() => $('#errorMessage').hide(), 5000);
+                    }
+                });
+            });
+
+            // Mensajes de éxito y error iniciales
+            const successMessageDiv = $('#successMessage');
+            const errorMessageDiv = $('#errorMessage');
+
+            if (successMessageDiv.text().trim() !== '') {
+                successMessageDiv.show();
+                setTimeout(() => successMessageDiv.hide(), 5000);
+            }
+
+            if (errorMessageDiv.text().trim() !== '') {
+                errorMessageDiv.show();
+                setTimeout(() => errorMessageDiv.hide(), 5000);
             }
         });
     </script>
