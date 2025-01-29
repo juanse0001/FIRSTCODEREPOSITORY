@@ -286,7 +286,7 @@ namespace BibliotecaWebApplication.Migrations
                         .IsRequired();
 
                     b.HasOne("BibliotecaWebApplication.Models.Libro", "Libro")
-                        .WithMany("LibroAutores")
+                        .WithMany("AutorLibros")
                         .HasForeignKey("LibroId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -354,7 +354,7 @@ namespace BibliotecaWebApplication.Migrations
 
             modelBuilder.Entity("BibliotecaWebApplication.Models.Libro", b =>
                 {
-                    b.Navigation("LibroAutores");
+                    b.Navigation("AutorLibros");
                 });
 #pragma warning restore 612, 618
         }
