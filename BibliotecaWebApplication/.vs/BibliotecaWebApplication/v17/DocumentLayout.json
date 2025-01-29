@@ -3,16 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Proyecto para Biblioteca\\Bliblioteca\\BibliotecaWebApplication\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|c:\\users\\usuario\\desktop\\repositorios juan\\proyecto para biblioteca\\bliblioteca\\bibliotecawebapplication\\bibliotecawebapplication\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|solutionrelative:bibliotecawebapplication\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|c:\\users\\usuario\\desktop\\repositorios juan\\proyecto para biblioteca\\bliblioteca\\bibliotecawebapplication\\bibliotecawebapplication\\views\\autorlibros\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|solutionrelative:bibliotecawebapplication\\views\\autorlibros\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|c:\\users\\usuario\\desktop\\repositorios juan\\proyecto para biblioteca\\bliblioteca\\bibliotecawebapplication\\bibliotecawebapplication\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|solutionrelative:bibliotecawebapplication\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|c:\\users\\usuario\\desktop\\repositorios juan\\proyecto para biblioteca\\bliblioteca\\bibliotecawebapplication\\bibliotecawebapplication\\models\\autor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|solutionrelative:bibliotecawebapplication\\models\\autor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|c:\\users\\usuario\\desktop\\repositorios juan\\proyecto para biblioteca\\bliblioteca\\bibliotecawebapplication\\bibliotecawebapplication\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|solutionrelative:bibliotecawebapplication\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|c:\\users\\usuario\\desktop\\repositorios juan\\proyecto para biblioteca\\bliblioteca\\bibliotecawebapplication\\bibliotecawebapplication\\controllers\\autorlibroscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|solutionrelative:bibliotecawebapplication\\controllers\\autorlibroscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|c:\\users\\usuario\\desktop\\repositorios juan\\proyecto para biblioteca\\bliblioteca\\bibliotecawebapplication\\bibliotecawebapplication\\views\\autorlibros\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|solutionrelative:bibliotecawebapplication\\views\\autorlibros\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|c:\\users\\usuario\\desktop\\repositorios juan\\proyecto para biblioteca\\bliblioteca\\bibliotecawebapplication\\bibliotecawebapplication\\views\\autorlibros\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|solutionrelative:bibliotecawebapplication\\views\\autorlibros\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|c:\\users\\usuario\\desktop\\repositorios juan\\proyecto para biblioteca\\bliblioteca\\bibliotecawebapplication\\bibliotecawebapplication\\models\\autorlibro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|solutionrelative:bibliotecawebapplication\\models\\autorlibro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|c:\\users\\usuario\\desktop\\repositorios juan\\proyecto para biblioteca\\bliblioteca\\bibliotecawebapplication\\bibliotecawebapplication\\views\\autorlibros\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|solutionrelative:bibliotecawebapplication\\views\\autorlibros\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|c:\\users\\usuario\\desktop\\repositorios juan\\proyecto para biblioteca\\bliblioteca\\bibliotecawebapplication\\bibliotecawebapplication\\views\\libros\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{10823A2A-DC7E-4474-A525-0DFF1712F964}|BibliotecaWebApplication\\BibliotecaWebApplication.csproj|solutionrelative:bibliotecawebapplication\\views\\libros\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,44 +42,104 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Proyecto para Biblioteca\\Bliblioteca\\BibliotecaWebApplication\\BibliotecaWebApplication\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "BibliotecaWebApplication\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Proyecto para Biblioteca\\Bliblioteca\\BibliotecaWebApplication\\BibliotecaWebApplication\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "BibliotecaWebApplication\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAA+wCQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-29T00:05:42.727Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Proyecto para Biblioteca\\Bliblioteca\\BibliotecaWebApplication\\BibliotecaWebApplication\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "BibliotecaWebApplication\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Proyecto para Biblioteca\\Bliblioteca\\BibliotecaWebApplication\\BibliotecaWebApplication\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "BibliotecaWebApplication\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAB4AAAAAAAAAAIBAwD0AAAApAAAAAAAAAA==",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Proyecto para Biblioteca\\Bliblioteca\\BibliotecaWebApplication\\BibliotecaWebApplication\\Views\\AutorLibros\\Index.cshtml",
+              "RelativeDocumentMoniker": "BibliotecaWebApplication\\Views\\AutorLibros\\Index.cshtml",
+              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Proyecto para Biblioteca\\Bliblioteca\\BibliotecaWebApplication\\BibliotecaWebApplication\\Views\\AutorLibros\\Index.cshtml",
+              "RelativeToolTip": "BibliotecaWebApplication\\Views\\AutorLibros\\Index.cshtml",
+              "ViewState": "AgIAACkAAAAAAAAAAAAAAEgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-29T00:00:22.956Z",
+              "WhenOpened": "2025-01-06T22:51:40.555Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AutorLibro.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Proyecto para Biblioteca\\Bliblioteca\\BibliotecaWebApplication\\BibliotecaWebApplication\\Models\\AutorLibro.cs",
+              "RelativeDocumentMoniker": "BibliotecaWebApplication\\Models\\AutorLibro.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Proyecto para Biblioteca\\Bliblioteca\\BibliotecaWebApplication\\BibliotecaWebApplication\\Models\\AutorLibro.cs",
+              "RelativeToolTip": "BibliotecaWebApplication\\Models\\AutorLibro.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-05T22:07:30.601Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Proyecto para Biblioteca\\Bliblioteca\\BibliotecaWebApplication\\BibliotecaWebApplication\\Views\\AutorLibros\\Details.cshtml",
+              "RelativeDocumentMoniker": "BibliotecaWebApplication\\Views\\AutorLibros\\Details.cshtml",
+              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Proyecto para Biblioteca\\Bliblioteca\\BibliotecaWebApplication\\BibliotecaWebApplication\\Views\\AutorLibros\\Details.cshtml",
+              "RelativeToolTip": "BibliotecaWebApplication\\Views\\AutorLibros\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-05T00:27:25.493Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Proyecto para Biblioteca\\Bliblioteca\\BibliotecaWebApplication\\BibliotecaWebApplication\\Views\\AutorLibros\\Edit.cshtml",
+              "RelativeDocumentMoniker": "BibliotecaWebApplication\\Views\\AutorLibros\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Proyecto para Biblioteca\\Bliblioteca\\BibliotecaWebApplication\\BibliotecaWebApplication\\Views\\AutorLibros\\Edit.cshtml",
+              "RelativeToolTip": "BibliotecaWebApplication\\Views\\AutorLibros\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-05T00:11:08.909Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Proyecto para Biblioteca\\Bliblioteca\\BibliotecaWebApplication\\BibliotecaWebApplication\\Views\\AutorLibros\\Create.cshtml",
+              "RelativeDocumentMoniker": "BibliotecaWebApplication\\Views\\AutorLibros\\Create.cshtml",
+              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Proyecto para Biblioteca\\Bliblioteca\\BibliotecaWebApplication\\BibliotecaWebApplication\\Views\\AutorLibros\\Create.cshtml",
+              "RelativeToolTip": "BibliotecaWebApplication\\Views\\AutorLibros\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-04T23:58:39.565Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Autor.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Proyecto para Biblioteca\\Bliblioteca\\BibliotecaWebApplication\\BibliotecaWebApplication\\Models\\Autor.cs",
+              "RelativeDocumentMoniker": "BibliotecaWebApplication\\Models\\Autor.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Proyecto para Biblioteca\\Bliblioteca\\BibliotecaWebApplication\\BibliotecaWebApplication\\Models\\Autor.cs",
+              "RelativeToolTip": "BibliotecaWebApplication\\Models\\Autor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T23:38:43.11Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Proyecto para Biblioteca\\Bliblioteca\\BibliotecaWebApplication\\BibliotecaWebApplication\\Views\\Libros\\Details.cshtml",
+              "RelativeDocumentMoniker": "BibliotecaWebApplication\\Views\\Libros\\Details.cshtml",
+              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Proyecto para Biblioteca\\Bliblioteca\\BibliotecaWebApplication\\BibliotecaWebApplication\\Views\\Libros\\Details.cshtml",
+              "RelativeToolTip": "BibliotecaWebApplication\\Views\\Libros\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-04T23:40:48.572Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "site.css",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Proyecto para Biblioteca\\Bliblioteca\\BibliotecaWebApplication\\BibliotecaWebApplication\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "BibliotecaWebApplication\\wwwroot\\css\\site.css",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Proyecto para Biblioteca\\Bliblioteca\\BibliotecaWebApplication\\BibliotecaWebApplication\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "BibliotecaWebApplication\\wwwroot\\css\\site.css",
-              "ViewState": "AgIAAJgAAAAAAAAAAAAUwLkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-01-28T23:53:16.844Z"
+              "Title": "AutorLibrosController.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Proyecto para Biblioteca\\Bliblioteca\\BibliotecaWebApplication\\BibliotecaWebApplication\\Controllers\\AutorLibrosController.cs",
+              "RelativeDocumentMoniker": "BibliotecaWebApplication\\Controllers\\AutorLibrosController.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Repositorios Juan\\Proyecto para Biblioteca\\Bliblioteca\\BibliotecaWebApplication\\BibliotecaWebApplication\\Controllers\\AutorLibrosController.cs",
+              "RelativeToolTip": "BibliotecaWebApplication\\Controllers\\AutorLibrosController.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAIwFYAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T00:20:03.847Z"
             }
           ]
         }
