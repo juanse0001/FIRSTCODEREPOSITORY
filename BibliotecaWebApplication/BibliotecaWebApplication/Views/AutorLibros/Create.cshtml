@@ -1,36 +1,63 @@
 ﻿@model BibliotecaWebApplication.Models.AutorLibro
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Crear Relación Autor-Libro";
 }
 
-<h1>Create</h1>
+<h1>Crear Relación Autor-Libro</h1>
 
-<h4>AutorLibro</h4>
+<h4>Complete los detalles para la relación entre Autor y Libro</h4>
 <hr />
+
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
+    <div class="col-md-6">
+        <form asp-action="Create" asp-controller="AutorLibros">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!-- Autor Dropdown -->
             <div class="form-group">
-                <label asp-for="AutorId" class="control-label"></label>
-                <select asp-for="AutorId" class ="form-control" asp-items="ViewBag.AutorId"></select>
+                <label for="AutorId" class="control-label">Autor</label>
+                <select asp-for="AutorId" asp-items="ViewBag.AutorId" class="form-control">
+                    <option value="">Seleccionar Autor</option>
+                </select>
+                <span asp-validation-for="AutorId" class="text-danger"></span>
             </div>
+
+            <!-- Libro Dropdown -->
             <div class="form-group">
-                <label asp-for="LibroId" class="control-label"></label>
-                <select asp-for="LibroId" class ="form-control" asp-items="ViewBag.LibroId"></select>
+                <label for="LibroId" class="control-label">Libro</label>
+                <select asp-for="LibroId" asp-items="ViewBag.LibroId" class="form-control">
+                    <option value="">Seleccionar Libro</option>
+                </select>
+                <span asp-validation-for="LibroId" class="text-danger"></span>
             </div>
+
+            <!-- Botones de Guardar y Cancelar -->
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
             </div>
+
+            <!-- Mensajes de éxito o error -->
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <div class="alert alert-success">
+                    @TempData["SuccessMessage"]
+                </div>
+            }
+
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <div class="alert alert-danger">
+                    @TempData["ErrorMessage"]
+                </div>
+            }
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
