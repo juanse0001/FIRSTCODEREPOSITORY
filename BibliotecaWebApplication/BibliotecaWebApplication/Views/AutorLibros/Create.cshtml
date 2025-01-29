@@ -1,36 +1,61 @@
 ﻿@model BibliotecaWebApplication.Models.AutorLibro
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Crear Relación Autor-Libro";
 }
 
-<h1>Create</h1>
+<h1>Crear Relación Autor-Libro</h1>
 
-<h4>AutorLibro</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="AutorId" class="control-label"></label>
-                <select asp-for="AutorId" class ="form-control" asp-items="ViewBag.AutorId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="LibroId" class="control-label"></label>
-                <select asp-for="LibroId" class ="form-control" asp-items="ViewBag.LibroId"></select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+<div class="alert alert-success" role="alert" style="display: none;" id="successMessage"></div>
+<div class="alert alert-danger" role="alert" style="display: none;" id="errorMessage"></div>
+
+<form asp-action="Create" method="post">
+    <div class="mb-3">
+        <label for="AutorId" class="form-label">Autor</label>
+        <select id="AutorId" name="AutorId" class="form-select" required>
+            <option value="">Seleccione un autor</option>
+        </select>
     </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+    <div class="mb-3">
+        <label for="LibroId" class="form-label">Libro</label>
+        <select id="LibroId" name="LibroId" class="form-select" required>
+            <option value="">Seleccione un libro</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Cargar autores
+            $.get('/AutorLibros/GetAutores', function (data) {
+                const autorSelect = $('#AutorId');
+                data.forEach(function (autor) {
+                    autorSelect.append(`<option value="${autor.autorId}">${autor.nombre}</option>`);
+                });
+            }).fail(function () {
+                $('#errorMessage').text('Error al cargar los autores.').show();
+            });
+
+            // Cargar libros
+            $.get('/AutorLibros/GetLibros', function (data) {
+                const libroSelect = $('#LibroId');
+                data.forEach(function (libro) {
+                    libroSelect.append(`<option value="${libro.libroId}">${libro.titulo}</option>`);
+                });
+            }).fail(function () {
+                $('#errorMessage').text('Error al cargar los libros.').show();
+            });
+
+            // Mostrar mensaje de éxito si existe
+            const successMessage = '@TempData["SuccessMessage"]';
+            if (successMessage) {
+                $('#successMessage').text(successMessage).show();
+            }
+        });
+    </script>
 }
