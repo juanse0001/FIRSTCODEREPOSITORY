@@ -34,9 +34,9 @@
 <div class="row mt-3">
     <h4>Autores del Libro</h4>
     <ul class="list-group list-group-flush">
-        @if (Model.AutorLibros.Any())
+        @if (Model.LibroAutores.Any())
         {
-            foreach (var autorlibro in Model.AutorLibros)
+            foreach (var autorlibro in Model.LibroAutores)
             {
                 <li class="list-group-item d-flex align-items-center">
                     <span class="badge text-primary me-2">

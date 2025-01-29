@@ -32,7 +32,7 @@ namespace BibliotecaWebApplication.Controllers
                 return NotFound();
             }
             var libro = await _context.Libros
-                .Include(l => l.AutorLibros)
+                .Include(l => l.LibroAutores)
                 .ThenInclude(a => a.Autor)
                 .FirstOrDefaultAsync(m => m.LibroId == id);
 
@@ -89,7 +89,7 @@ namespace BibliotecaWebApplication.Controllers
             }
 
             var libro = await _context.Libros
-                .Include(l => l.AutorLibros)
+                .Include(l => l.LibroAutores)
                 .ThenInclude(la => la.Autor)
                 .FirstOrDefaultAsync(m => m.LibroId == id);
 
@@ -98,7 +98,7 @@ namespace BibliotecaWebApplication.Controllers
                 return NotFound();
             }
 
-            ViewBag.AutoresSelectList = new SelectList(_context.Autores, "AutorId", "Nombre", libro.AutorLibros.Select(la => la.AutorId));
+            ViewBag.AutoresSelectList = new SelectList(_context.Autores, "AutorId", "Nombre", libro.LibroAutores.Select(la => la.AutorId));
             return View(libro);
         }
 
@@ -157,7 +157,7 @@ namespace BibliotecaWebApplication.Controllers
             }
 
             var libro = await _context.Libros
-                .Include(l => l.AutorLibros)
+                .Include(l => l.LibroAutores)
                 .ThenInclude(a => a.Autor)
                 .FirstOrDefaultAsync(m => m.LibroId == id);
 

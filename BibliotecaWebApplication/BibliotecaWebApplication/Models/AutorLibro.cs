@@ -1,17 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace BibliotecaWebApplication.Models
+﻿namespace BibliotecaWebApplication.Models
 {
     public class AutorLibro
     {
-        [Required]
         public Guid AutorId { get; set; } 
-
-        public Autor? Autor { get; set; }
-
-        [Required]
+        public Autor Autor { get; set; }
         public Guid LibroId { get; set; }
-
-        public Libro? Libro { get; set; }
+        public Libro Libro { get; set; }
     }
 }

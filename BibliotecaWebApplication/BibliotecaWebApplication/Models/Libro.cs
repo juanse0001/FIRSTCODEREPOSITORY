@@ -15,6 +15,6 @@ namespace BibliotecaWebApplication.Models
             this.LibroId = Guid.NewGuid();
         }
         //Propiedades de navegacion 
-        public ICollection<AutorLibro> AutorLibros { get; set; } = new List<AutorLibro>();
+        public ICollection<AutorLibro> LibroAutores { get; set; } = new List<AutorLibro>();
     }
 }

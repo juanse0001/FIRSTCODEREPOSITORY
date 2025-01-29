@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BibliotecaWebApplication.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250109002507_InitialCreate")]
+    [Migration("20240820172550_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -289,7 +289,7 @@ namespace BibliotecaWebApplication.Migrations
                         .IsRequired();
 
                     b.HasOne("BibliotecaWebApplication.Models.Libro", "Libro")
-                        .WithMany("AutorLibros")
+                        .WithMany("LibroAutores")
                         .HasForeignKey("LibroId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -357,7 +357,7 @@ namespace BibliotecaWebApplication.Migrations
 
             modelBuilder.Entity("BibliotecaWebApplication.Models.Libro", b =>
                 {
-                    b.Navigation("AutorLibros");
+                    b.Navigation("LibroAutores");
                 });
 #pragma warning restore 612, 618
         }
