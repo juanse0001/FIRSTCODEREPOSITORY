@@ -7,10 +7,12 @@
 <h1>Relaciones Autor-Libro</h1>
 
 <p>
-    <a asp-action="Create" class="btn btn-primary">Crear Nueva Relación</a>
+    <a asp-action="Create" class="btn btn-primary">
+        <i class="fas fa-plus"></i> Crear Nueva Relación
+    </a>
 </p>
 
-<table class="table">
+<table id="relacionesTable" class="table table-striped table-bordered">
     <thead>
         <tr>
             <th>Autor</th>
@@ -20,19 +22,51 @@
     </thead>
     <tbody>
         @foreach (var item in Model)
+
         {
             <tr>
+                <td>@item.Autor.Nombres @item.Autor.Apellidos</td>
+                <td>@item.Libro.Titulo</td>
                 <td>
-                    @item.Autor.Nombres, @item.Autor.Apellidos  
-                </td>
-                <td>
-                    @item.Libro.Titulo
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-autorId="@item.AutorId" asp-route-libroId="@item.LibroId">Editar</a>
-                    <a asp-action="Delete" asp-route-autorId="@item.AutorId" asp-route-libroId="@item.LibroId">Eliminar</a>
+                    <a asp-action="Edit" asp-route-autorId="@item.AutorId" asp-route-libroId="@item.LibroId" class="btn btn-warning btn-sm">
+                        <i class="bi bi-pencil-square"></i> Editar
+                    </a>
+                    <a asp-action="Delete" asp-route-autorId="@item.AutorId" asp-route-libroId="@item.LibroId" class="btn btn-danger btn-sm">
+                        <i class="bi bi-trash-fill"></i> Eliminar
+                    </a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
+
+@section Scripts {
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#relacionesTable').DataTable({
+                "paging": true,
+                "searching": true,
+                "ordering": true,
+                "info": true,
+                "lengthChange": true,
+                "pageLength": 10,
+                "language": {
+                    "lengthMenu": "Mostrar _MENU_ registros por página",
+                    "zeroRecords": "No se encontraron resultados",
+                    "info": "Mostrando página _PAGE_ de _PAGES_",
+                    "infoEmpty": "No hay registros disponibles",
+                    "infoFiltered": "(filtrado de _MAX_ registros totales)",
+                    "search": "Buscar:",
+                    "paginate": {
+                        "first": "Primero",
+                        "last": "Último",
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+                    }
+                }
+            });
+        });
+    </script>
+}
